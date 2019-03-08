@@ -85,7 +85,7 @@ div.quote{
 div.unlock{
     background: white;
     border-radius: 50%;
-    height: 100%;
+    height: 630px;
     width: 250px;
     right: -22%;
     top: -2%;
@@ -228,4 +228,33 @@ p{
 }
 .weather div#location{
     display: none;
+}
+#getWeather {
+    height: 70px;
+    width: 200px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Fresca', sans-serif;
+    background-color: #FFFFFF;
+    color: #002db3;   
+}
+
+#getWeather:hover {
+    background-color: #002db3;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    border-radius: 5px;
+}
+
+.unlock_Time div#txt{
+    width: 800px;
+    height: 800px;
+    color: yellow;
+    top: 50px;
+    left: 250px;
+    position: absolute;
+    display: inline-block;
 }
