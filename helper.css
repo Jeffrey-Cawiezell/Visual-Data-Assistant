@@ -87,8 +87,8 @@ div.unlock{
     border-radius: 50%;
     height: 630px;
     width: 250px;
-    right: -22%;
-    top: -2%;
+    right: -150px;
+    top: -15px;
     position: absolute;
     padding: 10px;
     cursor: move;
@@ -257,4 +257,5 @@ p{
     left: 250px;
     position: absolute;
     display: inline-block;
+    font-size: 100px;
 }
