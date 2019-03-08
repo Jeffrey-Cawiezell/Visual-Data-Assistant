@@ -3,6 +3,7 @@
 <head>
 	<title>Home Helper</title>
 	<link rel="stylesheet" type="text/css" href="helper.css">
+    <link rel="stylesheet" href="style.css" />
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 	<script>
 function startTime() {
@@ -28,37 +29,20 @@ function checkHour(i){
 	return i;
 }
 //weather jquery
-function weather() {
-  var location = document.getElementById("location");
-  var apiKey = "INSERT API KEY";
-//  var url = "https://api.forecast.io/forecast/"; This causes a 403 error.
 
-  navigator.geolocation.getCurrentPosition(success, error);
 
-  function success(position) {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-
-    location.innerHTML =
-      "Latitude is " + latitude + "° Longitude is " + longitude + "°";
-
-    $.getJSON(
-      url + apiKey + "/" + latitude + "," + longitude + "?callback=?",
-      function(data) {
-        $("#temp").html(data.currently.temperature + "° F");
-        $("#minutely").html(data.minutely.summary);
+/*var getWeather = function() {
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        showWeather(lat, long)
+      })
+    }
+       else {
+            window.alert("Could not get location");
       }
-    );
-  }
-
-  function error() {
-    location.innerHTML = "Unable to retrieve your location";
-  }
-
-  location.innerHTML = "Locating...";
-}
-
-weather();
+  }*/
 </script>
 </head>
 <body onload="startTime(), weather()" scroll="no">
@@ -75,10 +59,11 @@ weather();
 <div class="cloud2"></div>
 <div class="cloud3"></div>
 <div class="weather">
-     <h1><div id="temp"></div><div id="minutely"></div></h1>
+  <h1><div id="temp"></div><div id="minutely"></div></h1>
+        <h2><div id="location"></div></h2>
+<!--<button id="getWeather" onclick="getWeather()">Get Current Weather!</button>-->
+     <!--<h1><div id="temp"></div><div id="minutely"></div></h1>
      <h2><div id="location"></div></h2>
-<!--
-Weather:<br>
 	Nashville <br> Mostly Cloudy <br> 36 Degrees Fahrenheit-->
 </div>
 <div class="green_circle">
