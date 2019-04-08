@@ -1,0 +1,17 @@
+{
+  "name": "visual-data-assistant",
+  "version": "0.0.0",
+  "description": "Silly UI Project",
+  "main": "app.js",
+  "repository": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "debug": "nodemon"
+  },
+  "author": "The Scrum Dumpsters",
+  "license": "ISC",
+  "dependencies": {
+    "express": "@"
+  }
+}
