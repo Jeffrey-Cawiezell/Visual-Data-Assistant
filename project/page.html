@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Helper</title>
+<link rel="stylesheet" type="text/css" href="page.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	<script>
+	function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  h = checkHour(h);
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+function checkHour(i){
+	if(i > 12){i -= 12};
+	if(i == 0){i = 12};
+	return i;
+}
+
+
+$( function() {
+$('.draggable').draggable({
+    axis: "x"
+});
+
+
+$('.draggable').on('mousedown', function() {
+		var x1 = x2 = $(".draggable").position().left;
+		var y1 = $(".draggable").position().top;
+		var y2 = ($(window).height() + $(".draggable").position().top);
+		$(".draggable").draggable('option', 'containment', 'window');
+	});
+  
+  $( ".draggable" ).mouseup(function() {
+  
+  var x = document.getElementById("lock");
+  var pos = x.getBoundingClientRect();
+  var t = pos.right;
+  var q = window.innerWidth * (2/3);
+  if(t < q)
+  {
+  	 document.getElementById("lock").innerHTML = '<img src="unlock.png" alt="lock ring">';
+	 setTimeout(function(){
+		window.location.href = "UI Design/wheelnav.js-1.7.1/integratedwheel.html";
+	 }, 1000);
+  }
+  
+});
+} );
+</script>
+</head>
+<body onload="startTime()">
+<div class = "outerTime">
+<div id="txt"></div>
+</div>
+
+	
+	<div class ="draggable" draggable="true" id = "lock">
+	<img src="lock.png" alt="lock ring" id="lockPic">
+	</div>
+</body>
+</html>
