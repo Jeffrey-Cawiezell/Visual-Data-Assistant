@@ -3,6 +3,11 @@ The voice api will ask for your permission every single time if you try to just 
 -Yes, each group member MUST do this if you want to work with the voice api. Sorry, but I didn't design chrome. Firefox isn't any different.
 -This will ABSOLUTELY have to be used in the production environment, so you may as well be familiar with it even if you don't use the voice yourself.
 
+***********
+THE FIRST TIME YOU USE THE VOICE API, IT WILL STILL ASK FOR YOUR PERMISSION ONCE.
+IT SHOULDN'T ASK ANY MORE AFTER THAT
+***********
+
 INSTRUCTIONS:
 1. Download Node.js from the official Node.js web site: https://nodejs.org
 2. Follow installation instructions
@@ -20,6 +25,11 @@ INSTRUCTIONS:
 	localhost:3000
 
 REFER TO NODEJS.ORG IF THERE ARE PROBLEMS (also youtube or just google)
+
+-BE SURE YOU DO "NPM INSTALL" (this is NOT the same as just installing node to your hard drive).
+	If there isn't a folder called node_modules that gets created in the main top level directory (same folder as package.json and app.js), it won't work.
+- There is another package.json deeper into the project. This is NOT the same one you need for node.
+	The package.json in the top level directory is what I'm referring to.
 
 CAVEATS:
 	-You will have to leave the command prompt open.
