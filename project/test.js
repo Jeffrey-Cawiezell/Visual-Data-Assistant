@@ -6,13 +6,13 @@ const app = express();
 
 
 //Declare static folder to be served. It contains the js, images, css, etc.
-app.use(express.static('project'));
+app.use(express.static('speech-test'));
 
 // **** Routes ****
 
 // Home Route
 app.get('*', (req, res) => {
-res.sendFile(path.join(__dirname + '/project/page.html'))
+res.sendFile(path.join(__dirname + '/speech-test/SpeechApiTest.html'))
 });
 
 // Add Route

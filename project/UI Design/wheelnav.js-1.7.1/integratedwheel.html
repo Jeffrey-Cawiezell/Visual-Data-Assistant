@@ -10,7 +10,6 @@
     <script type="text/javascript" src="local-dev/main.js"></script>
   	<script src="form.js"></script>
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
- 
 
 <style>
     
@@ -268,6 +267,34 @@
 </head>
 
 <body onload="startTime()">
+	<!-- This 'span' is just an example. Don't leave this here. -->
+	<span id='message' style="color: white;"></span>
+	<br> <br>
+	<!--Same with this button-->
+	<button id='btnStartSpeaking'>Speak</button>
+	<br> <br>
+	<script>
+		var message = document.querySelector('#message');
+	</script>
+    <script type="text/javascript" src="src/speech.js"></script>
+    <script>
+			recognition.onresult = function(event) {
+				var last = event.results.length - 1;
+				var words = event.results[last][0].transcript;
+				message.textContent = 'Voice Input: ' + words + '.';
+				console.log(words);
+				//recognition.wordsSpoken += words;
+			}
+
+    /* (btnStartSpeaking is another html attribute.
+     * Just an example. It's the thing that starts the recording.)
+     **************************/
+		 document.querySelector('#btnStartSpeaking').addEventListener('click', function() {
+		  recognition.start();
+		 })
+
+    </script>
+
 	<div class="Main">
 	<ul id="tdList">
 	<li id="TD1">This is the first To-do</li>
