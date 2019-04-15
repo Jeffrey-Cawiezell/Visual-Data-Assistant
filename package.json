@@ -1,0 +1,17 @@
+{
+  "name": "visual-data-assistant",
+  "version": "0.0.0",
+  "description": "UI Project",
+  "main": "app.js",
+  "repository": "",
+  "scripts": {
+    "test": "node project/test.js",
+    "start": "node app.js",
+    "debug": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
