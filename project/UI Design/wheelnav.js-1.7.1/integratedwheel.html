@@ -8,6 +8,7 @@
   	<script type="text/javascript" src="dist/progressbar.js"></script>
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<!--<script src="C:/Users/test/Desktop/project/form.js"></script>-->
+	<script type="text/javascript" src="src/speech.js"></script>
 
 <style>
     
@@ -448,6 +449,22 @@
  
   
 </div>
+
+<script>
+// speech recognition code
+var form = document.getElementById('to-do_Form');
+
+recognition.onresult = function(event) {
+	var last = event.results.length - 1;
+	var words = event.results[last][0].transcript;
+	form.textContent = words;
+	console.log(words);
+	//recognition.wordsSpoken += words;
+}
+
+
+</script>
+
 <script>
 var toDoList = [];
 var nextAval = 0;
@@ -495,24 +512,31 @@ toDoHTML[4] = document.getElementById("TD2");
 	
 	
 function showForm() {
-	  
-      var x = document.getElementById('to-do_Form');
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-	
-	
-	
-	function goToReward(){
-		window.location.href = "https://google.com";
+
+	var x = document.getElementById('to-do_Form');
+	if (x.style.display === 'none') {
+	x.style.display = 'block';
+	// start speech recognition
+	recognition.start();
+	} else {
+	x.style.display = 'none';
+	// stop speech recognition
+	recognition.stop();
 	}
-	function goToLock(){
-		window.location.href = "../../page.html";
-	}
+
+}
+	
+	
+	
+function goToReward(){
+	window.location.href = "https://google.com";
+}
+function goToLock(){
+	window.location.href = "../../page.html";
+}
+
 </script>
+
 <script>
 // progressbar.js@1.0.0 version is used
 		// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
