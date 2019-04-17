@@ -5,13 +5,13 @@
   "main": "app.js",
   "repository": "",
   "scripts": {
-    "test": "node project/test.js",
-    "start": "node app.js",
+    "start": "nodemon",
     "debug": "nodemon"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11"
   }
 }
