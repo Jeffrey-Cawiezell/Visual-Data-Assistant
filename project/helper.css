@@ -1,0 +1,288 @@
+body{
+	background: black;
+    overflow: hidden;
+}
+img {
+    left: 30px;
+    position: absolute;
+}
+h1{
+	color: white;
+	text-align: center;
+}
+/*.donut-ring {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    }*/
+    textarea.grey_rectangle{
+        width: 110px;
+        height: 40px;
+        background:grey;
+        right: 125px;
+        top: 225px;
+        position: absolute;
+        color: yellow;
+    }
+    div.grey_rectangle2{
+        width: 110px;
+        height: 30px;
+        background:grey;
+        right: 135px;
+        top: 300px;
+        position: absolute;
+    }
+    div.grey_rectangle3{
+        width: 110px;
+        height: 30px;
+        background:grey;
+        right: 125px;
+        top: 375px;
+        position: absolute;
+    }
+    div.green_circle{
+        background: green;
+        border-radius: 50%;
+        height: 600px;
+        width: 600px;
+        right: -350px;
+        top: 20px;
+        position: absolute;
+    }
+    div.black_circle{
+        background: black;
+        border-radius: 50%;
+        height: 575px;
+        width: 575px;
+        right: -350px;
+        top: 25px;
+        position: absolute;
+    }
+    div.blue_circle{
+        background: blue;
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        right: 3%;
+        top: 29%;
+        position: absolute;
+    }
+    div.black_circle2{
+        background: black;
+        border-radius: 50%;
+        height: 180px;
+        width: 180px;
+        right: 4.5%;
+        top: 31%;
+        position: absolute;
+    }
+    div.quote{
+        color: yellow;
+        bottom: 100px;
+        left: 50px;
+        right: 300px;
+        position: absolute;
+    }
+    div.unlock{
+        background: white;
+        border-radius: 50%;
+        height: 630px;
+        width: 250px;
+        right: -150px;
+        top: -15px;
+        position: absolute;
+        padding: 10px;
+        cursor: move;
+        z-index: 10;
+    }
+/*div.time{
+    color: yellow;
+    top: 75px;
+    left: 75px;
+    position: absolute;
+    }*/
+    div.weather{
+        color: yellow;
+        top: 255px;
+        left: 100px;
+        position: absolute;
+    }
+    div.clock{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background: yellow;
+        position: absolute;
+        left: 25px;
+        top: 75px;
+    }
+    div.black_clock{
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        background: black;
+        left: 28px;
+        top: 78px;
+        position: absolute;
+    }
+    div.yellow_rectangle{
+        width: 5px;
+        height: 25px;
+        background:yellow;
+        left: 48px;
+        top: 78px;
+        position: absolute;
+    }
+    div.yellow_rectangle2{
+        width: 25px;
+        height: 5px;
+        background:yellow;
+        left: 48px;
+        top: 98px;
+        position: absolute;
+    }
+    div#txt{
+        width: 25px;
+        height: 25px;
+        color: yellow;
+        top: 98px;
+        left: 78px;
+        position: absolute;
+
+    }
+    div.cloud{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background: yellow;
+        position: absolute;
+        left: 25px;
+        top: 255px;
+    }
+    div.cloud2{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background: yellow;
+        position: absolute;
+        left: 15px;
+        top: 275px;
+    }
+    div.cloud3{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background: yellow;
+        position: absolute;
+        left: 55px;
+        top: 275px;
+    }
+    div.diamond1{
+        height: 10px;
+        width: 10px;
+        background: dodgerblue;
+        position: absolute;
+        top: 9px;
+        right: 115px;
+        transform: rotate(45deg);
+    }
+    div.diamond_line1{
+        height: 3px;
+        width: 8px;
+        background: blue;
+        transform: rotate(16deg);
+        position: absolute;
+        right: 120px;
+        top: 13px;
+    }
+    div.diamond_line2{
+        height: 3px;
+        width: 8px;
+        background: blue;
+        transform: rotate(170deg);
+        position: absolute;
+        right: 112px;
+        top: 13px;
+    }
+    div.diamond_line3{
+        height: 8px;
+        width: 3px;
+        background: blue;
+        position: absolute;
+        right: 118px;
+        top: 13px;
+    }
+    div.gems_number{
+        position: absolute;
+        top: -10px;
+        right: 90px;
+    }
+    p{
+        color: yellow;
+    }
+    .unlock_Time div#txt{
+        width: 800px;
+        height: 800px;
+        color: yellow;
+        top: 50px;
+        left: 250px;
+        position: absolute;
+        display: inline-block;
+        font-size: 100px;
+    }
+    div.diamond_background{
+        background: black;
+        width: 10px;
+        height: 5px;
+        position: absolute;
+        top: 6px;
+        right: 115px;
+    }
+    div#quote{
+        background: yellow;
+    }
+    #to-do_Item label{
+        color: white;
+    }
+    #to-do_Item span{
+        color: red;
+    }
+    #to-do_Item h1{
+        color: #FFEB3B;
+    }
+    #to-do_Item{
+        border: solid;
+        border-color: white;
+        position: absolute;
+        right: 2000px;
+    }
+	#to-do_Form{
+	position: absolute;
+	right: 2000px;
+	}
+    a{
+        color: yellow;
+        text-decoration: none;
+        position: absolute;
+        left: 20px;
+    }
+    a:focus, a:click{
+        color: blue;
+    }
+    h2{
+        cursor: pointer;
+        background: url(images/plus.png) no-repeat left center;
+        padding: 0.25em 0 0.25em 0.25em;
+    }
+    h2.minus{
+        background: url(images/minus.png) no-repeat left center;
+    }
+#plus{
+    position: absolute;
+    right: 150px;
+}
+a#search-btn{
+    position: absolute;
+    left: 180px;
+    top: 5px;
+}

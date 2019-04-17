@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Helper</title>
+	<link rel="stylesheet" type="text/css" href="helper.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="form.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      h = checkHour(h);
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+function checkHour(i){
+	if(i == 13){i = 1};
+  if(i == 14){i = 2};
+  if(i == 15){i = 3};
+  if(i == 16){i = 4};
+  if(i == 17){i = 5};
+  if(i == 18){i = 6};
+  if(i == 19){i = 7};
+  if(i == 20){i = 8};
+  if(i == 21){i = 9};
+  if(i == 22){i = 10};
+  if(i == 23){i = 11};
+  if(i == 0){i = 12};
+	return i;
+}
+//FAQ feature
+
+</script>
+</head>
+<body onload="startTime()" scroll="no">
+  <!--<div class="time">-->
+  <div class="clock"></div>
+  <div class="black_clock"></div>
+  <div class="yellow_rectangle"></div>
+  <div class="yellow_rectangle2"></div>
+  <!--<br>11:39 A.M.-->
+  <div id="txt"></div>
+  <!--</div>-->
+  <aside>
+    <div class="cloud"></div>
+    <div class="cloud2"></div>
+    <div class="cloud3"></div>
+    <div class="weather">
+      <div class="container">
+        <header class="header">
+          <div class="search">
+            <input type="text" placeholder="Enter City Name" id="search-txt">
+            <a id="search-btn" href="#"><i class="fas fa-search"></i></a>
+          </div>
+        </header>
+
+        <main id="main">
+          
+          <div class="city-icon">
+            <div class="city-icon-holder">
+              <div id="city-name"></div>
+              <img src="" alt="" id="icon">
+            </div>
+          </div>
+          
+          <div class="temperature">
+            <div id="temp"></div>
+          </div>
+          
+          <div class="humidity">
+            <div id="humidity-div"></div>
+          </div>
+          
+        </main>
+        
+      </div>
+      <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+
+      
+
+      <script  src="js/index.js"></script>
+
+
+
+    </div>
+    <div class="green_circle">
+    </div>
+    <div class="black_circle">
+     
+    </div>
+    <textarea class="grey_rectangle" name="grey_rectangle" ></textarea>
+     
+   </div>
+   <div class="grey_rectangle2">
+     O to-do list item
+   </div>
+   <div class="grey_rectangle3">
+     O to-do list item
+   </div>
+   <div class="diamond1"></div>
+<!--   <div class="diamond_line1"></div>
+   <div class="diamond_line2"></div>
+   <div class="diamond_line3"></div>-->
+   <div class="diamond_background"></div>
+   <div class="gems_number"><p>10</p></div>
+<div id="faqs"></div>
+  <input type="button" name="+" value="+" id="plus" onclick="showForm()">
+   <div id="to-do_Form" style="display: none">
+      <form id="to-do_Item" name="to-do Item" action="home_page.html" method="get">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+          <span id="name_error">*</span><br>
+          
+          <label for="due_date">Date:</label>
+          <input type="text" id="due_date" name="due_date">
+          <span id="due_date_error">*</span><br>
+          
+          <label for="quote">Quote Category</label>
+      <select id="quote">
+          <option value="spiritual">Spiritual</option>
+          <option value="motivational">Motivational</option>
+          <option value="education">Education</option>
+          <option value="health">Health</option>
+          <option value="stress_relief">Stress Relief</option>
+      </select>
+          <span id="quote_error">*</span><br>
+
+          <label for="gems">Gems Amount:</label>
+          <select id="gems">
+            <option value="five">Five</option>
+            <option value="ten">Ten</option>
+            <option value="fifteen">Fifteen</option>
+          </select>
+          <span id=gems_Error>*</span><br>
+          <label>&nbsp;</label>
+          <input type="submit" id="submission" value="Submit"><br>
+      </form>
+   </div>
+   </div>
+ </aside>
+ <footer>
+   <div class="quote">
+    Quote of the Day:<br>
+    Psalm 5:3 (NIV) “In the morning, LORD, you hear my voice;
+    in the morning I lay my requests before you and wait expectantly.”
+  </div>
+</footer>
+</body>
+</html>

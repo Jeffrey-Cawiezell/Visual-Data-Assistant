@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
 	<title>Home Helper</title>
-	<link rel="stylesheet" type="text/css" href="helper.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
   	<script type="text/javascript" src="dist/progressbar.js"></script>
-    <script type="text/javascript" src="local-dev/main.js"></script>
-  	<script src="form.js"></script>
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<!--<script src="C:/Users/test/Desktop/project/form.js"></script>-->
 
 <style>
     
@@ -23,6 +21,7 @@
 		
 		.Main{
 		display: none;
+		z-index: 0;
 		}
 		
          #container {
@@ -73,13 +72,14 @@
 		#TD3 input{
 		position: absolute;
 		opacity: 0;
-		cursor: pointer;
+		
 		height: 0px;
 		width: 0px;	
 				
 		}
 		
 		.checkmark {
+		
 		  position: absolute;
 		  top: 2px;
 		  left: -40px;
@@ -90,6 +90,8 @@
 		
 		#TD3:hover input ~ .checkmark {
 		border: 2px solid #50A9FA;
+		cursor: pointer;
+		
 		}
 		
 		#TD3 input:checked ~ .checkmark {
@@ -174,6 +176,7 @@
 		}
 		
 		i.up:hover, i.down:hover {
+		cursor: pointer;
 		border: solid rgb(57,255,20);
 		
 		border-width: 0 3px 3px 0;
@@ -207,6 +210,8 @@
 		height: 200px;
 		}
 		
+		
+		
         /* Insert generated CSS code from here -> http://pmg.softwaretailoring.net */
         #piemenu > svg { width: 100%; height: 100%; }
 		#piemenu { height: 400px; width: 400px; margin:auto; }
@@ -220,7 +225,106 @@
 		[class|=wheelnav-piemenu-title-selected] { fill: #fff; stroke: none; }
 		[class|=wheelnav-piemenu-title-hover] { fill: #222; stroke: none; cursor: pointer; }
 		[class|=wheelnav-piemenu-title] > tspan { font-family: Impact, Charcoal, sans-serif; font-size: 24px; }
+		
+	
+		
+		#formWrapper{
+			text-align: center;
+			z-index:3;
+		}
+		#formWrapper select{
+			cursor: pointer;
+		}
+		#to-do_Item label{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: 250px;
+				position: absolute;
 
+			}
+			#to-do_Item span{
+				color: red;
+				height: 50%;
+				width: 50%;
+				right: 9%;
+				position: absolute;
+			}
+			#to-do_Item input{
+				right: 35%;
+				position: absolute;
+			}
+			#to-do_Item select{
+				right: 35%;
+				position: absolute;
+
+			}
+			#to-do_Item{
+				z-index: 3;
+				border: solid;
+				border-color: rgb(80, 169, 250);
+				background-color: black;
+				position: absolute;
+				right: 30%;
+				top: 35%;
+				height: 40%;
+				width: 40%;
+			} 
+			
+			
+			#rewardButton{
+			cursor: pointer;
+				right: 100px;
+				top: 2px;
+				position: absolute;
+				
+			}
+			#lockButton{
+			cursor:pointer;
+			right:66px;
+			top:9px;
+			position:absolute;
+			}
+			
+			
+			
+			#plus{
+			top: 10px;
+			cursor: pointer;
+			border-radius: 50%;
+			position: absolute;
+			background-color: black;
+			color: white;
+			border: 2px solid white;
+			
+			right: 150px;
+			}
+			#name_format{
+				position: absolute;
+				top: 25%;
+				right: 35%;
+			}
+			#date_format{
+				position: absolute;
+				top: 35%;
+				right: 35%;
+			}
+			#quote_format{
+				position: absolute;
+				top: 45%;
+				right: 35%;
+			}
+			#gems_format{
+			cursor:pointer;
+				position: absolute;
+				top: 55%;
+				right: 35%;
+			}
+			#submission_format{
+				position: absolute;
+				top: 65%;
+				right: 35%;
+			}
     </style>
 
     <script type="text/javascript">
@@ -267,43 +371,56 @@
 </head>
 
 <body onload="startTime()">
-<!-- 	<!-- This 'span' is just an example. Don't leave this here. ->
-	<span id='message' style="color: white;"></span>
-	<br> <br>
-	<button id='btnStartSpeaking'>Speak</button>
-	<br> <br>
- -->
- <!-- COMMENT VOICE SCRIPT UNTIL INPUTBOX IS ADDED -->
-	<!-- <script>
-		/* TODO: #message = inputbox? */
-		var message = document.querySelector('#message');
-	</script> --> 
-    <!-- <script type="text/javascript" src="src/speech.js"></script> -->
-    <!-- <script>
-    			recognition.onresult = function(event) {
-    				var last = event.results.length - 1;
-    				var words = event.results[last][0].transcript;
-    				message.textContent = 'Voice Input: ' + words + '.';
-    				console.log(words);
-    				//recognition.wordsSpoken += words;
-    			}
-    
-    /* (btnStartSpeaking is another html attribute.
-     * Just an example. It's the thing that starts the recording.)
-     * TODO: add event for input box showing up; #btnStartSpeaking = clicked input box
-     **************************/
-    		 document.querySelector('#btnStartSpeaking').addEventListener('click', function() {
-    		  recognition.start();
-    		 })
-    
-    </script> -->
-
+   <div id="formWrapper">
+   <div id="to-do_Form" style="display: none">
+      <form id="to-do_Item" name="to-do Item" >
+		<div id="name_format">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" x-webkit-speech>
+          <span id="name_error">*</span><br />
+        </div>
+		<div id="date_format">
+          <label for="due_date">Date:</label>
+          <input type="text" id="due_date" name="due_date">
+          <span id="due_date_error">*</span><br />
+        </div>
+		<div id="quote_format">
+          <label for="quote">Quote Category</label>
+      <select id="quote">
+          <option value="spiritual">Spiritual</option>
+          <option value="motivational">Motivational</option>
+          <option value="education">Education</option>
+          <option value="health">Health</option>
+          <option value="stress_relief">Stress Relief</option>
+      </select>
+          <span id="quote_error">*</span><br />
+		</div>
+		<div id="gems_format">
+          <label for="gems">Gems Amount:</label>
+          <select id="gems">
+            <option value="five">Five</option>
+            <option value="ten">Ten</option>
+            <option value="fifteen">Fifteen</option>
+          </select>
+          <span id=gems_Error>*</span><br />
+		  </div>
+		  
+		<div id="submission_format">
+          <label>&nbsp;</label>
+          <input type="button" id="submission" value="Submit" onclick="submitToDo()"><br>
+		</div>
+      </form>
+   </div>
+   </div>
 	<div class="Main">
+	<img src="reward_icon.png" id="rewardButton" width="40" height="40" onclick="goToReward();"/>
+	<img src="lock.png" id="lockButton" width="24" height="24" onclick="goToLock();"/>
+	<input type="button" name="+" value="+" id="plus" onclick="showForm()">
 	<ul id="tdList">
 	<li id="TD1">This is the first To-do</li>
 	<li id="TD2">This is the second To-do</li>
 	<i class="up"></i>
-	<label><li id="TD3">This is the third To-do<input id="selectorBox" type="checkbox" name="select">
+	<label><li id="TD3"><span id="T3wrapper">This is the third To-do</span><input id="selectorBox" type="checkbox" name="select">
 	<span class="checkmark"></span></li></label>
 	<i class="down"></i>
 	<li id="TD4">This is the fourth To-do</li>
@@ -331,6 +448,71 @@
  
   
 </div>
+<script>
+var toDoList = [];
+var nextAval = 0;
+var first = 0;
+var last = 0;
+var toDoHTML = [];
+toDoHTML[0] = document.getElementById("T3wrapper");
+toDoHTML[1] = document.getElementById("TD4");
+toDoHTML[2] = document.getElementById("TD5");
+toDoHTML[3] = document.getElementById("TD1");
+toDoHTML[4] = document.getElementById("TD2");
+
+
+	function submitToDo()
+	{
+		
+		var toDo = {
+			name: "Jeff",
+			dateDay: 0,
+			dateMonth: 0,
+			dateYear: 0,
+			gemVal: 0,
+			quoteCat: 0,
+			
+		}
+		
+		toDo.name = $('#name').val();
+		toDo.dateDay = $('#name').val();
+		toDo.dateMonth = $('#name').val();
+		toDo.dateYear = $('#name').val();
+		toDo.gemVal = $('#name').val();
+		toDo.quoteCat = $('#name').val();
+		toDoList[nextAval] = toDo;
+		alert("made it this far");
+		for(var i = 0, j = nextAval; i < 5; i++,j--)
+		{
+			if( j >= 0)
+			{
+				toDoHTML[i].innerHTML = "" + toDoList[j].name;
+			}
+		}
+		nextAval++;
+		
+	}
+	
+	
+function showForm() {
+	  
+      var x = document.getElementById('to-do_Form');
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+	
+	
+	
+	function goToReward(){
+		window.location.href = "https://google.com";
+	}
+	function goToLock(){
+		window.location.href = "../../page.html";
+	}
+</script>
 <script>
 // progressbar.js@1.0.0 version is used
 		// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/

@@ -80,6 +80,7 @@ div.quote{
     position: absolute;
 }
 div.unlock{
+	/*cursor: grab;*/
     background: white;
     border-radius: 50%;
     height: 630px;
@@ -257,6 +258,7 @@ p{
 
 
 .draggable {
+	cursor: grabbing;
     position: absolute;
     top: 35%;
     background: rgb(8,8,8);
