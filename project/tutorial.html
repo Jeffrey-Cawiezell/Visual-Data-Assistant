@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body
+{
+background-color: black;
+font-family: "Georgia";
+cursor: url('cursor.cur'), auto;
+}
+.collapsible {
+  background-color: #777;
+  cursor: grabbing;
+  /*cursor: url('cursor.cur'), auto; */
+  padding: 5px;
+  width: 9%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #777;
+  color: white;
+  position: absolute;
+  bottom: 60px;
+
+}
+
+#bigPicture{
+text-align: left;
+padding: 10px;
+}
+</style>
+</head>
+<body style="cursor: url('cursor.cur'), auto">
+
+<button class="collapsible"><img src="help.svg" alt="Help Icon" style = width:40px height:40px></button>
+<div class="content">
+	<h1>Welcome to your Visual Data Assistant!<h1>
+
+    <div id="bigPicture"><IMG SRC="noun_Fist_98642.png" style= height:60px width:60px>&nbsp;&nbsp;Drag Cursor - Fist</div>
+    <div id="bigPicture"><IMG SRC="cursorPic.png" style= width:60px height:60px>&nbsp;&nbsp;Default Cursor - Open Hand</div>
+    <div id="bigPicture"><IMG SRC="diamond.png" style= height:50px>&nbsp;&nbsp;Reward Page</div>
+    <div id="bigPicture"><IMG SRC="plus.png" style= height:50px>&nbsp;&nbsp;Add Item</div>
+    <div id="bigPicture"><IMG SRC="lock.png" style= height:50px>&nbsp;&nbsp;Lock Screen</div>
+    
+    <div id="bigPicture"><img src="micPic.png" alt="Mic Icon" style = width:40px height:40px>&nbsp;&nbsp;&nbsp;&nbsp;Microphone</div>
+
+</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>

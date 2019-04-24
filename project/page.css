@@ -1,5 +1,5 @@
 body{
-	background: rgb(8,8,8);
+	background: rgb(0,0,0);
     overflow: hidden;
 }
 
@@ -261,11 +261,53 @@ p{
 	cursor: grabbing;
     position: absolute;
     top: 35%;
-    background: rgb(8,8,8);
+    background: rgb(0,0,0);
     height: 50%;
     width: 25%;
     right: 0px;
     text-align: center;
     margin: 0px;
 	
+}
+
+.collapsible {
+  background-color: #777;
+  cursor: grabbing;
+  /*cursor: url('cursor.cur'), auto; */
+  padding: 5px;
+  width: 5%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #777;
+  color: white;
+  position: absolute;
+  bottom: 60px;
+
+}
+
+#bigPicture{
+text-align: left;
+padding: 10px;
+}
+
+#arrow{
+	top: 32%;
+	right: 25%;
+	position: absolute;
+	-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Rewards</title>
+<meta charset="utf-8">
+<link href="rewards.css" rel="stylesheet">
+<script>
+	function slidefeature(){
+		if(document.getElementById("rewards_section").style.display === "none"){
+		   document.getElementById("rewards_section").style.display = "block";
+		}
+		else{
+		   document.getElementById("rewards_section").style.display = "none";
+		}
+	}
+</script>
+</head>
+
+<body>
+<input type="button" id="button" value="button" onclick="slidefeature()">
+<div id="rewards_section">
+<div id="nap">
+	<img src="images/nap.png">
+</div>
+<p class="napreward">Nap Time <br><br>
+	    5<img class="napreward" src="images/reward_icon.png"></p>
+
+<div id="social">
+	<img src="images/social.png">
+</div>
+<p class="socialreward">Social Break <br><br>
+	    5<img class="socialreward" src="images/reward_icon.png"></p>
+
+<div id="coffee">
+	<a href="newpage.html"><img src="images/coffee.png"></a>
+</div>
+<p class="coffeereward">Coffee Break <br><br>
+	    5<img class="coffeereward" src="images/reward_icon.png"></p>
+
+<div id="snacks">
+	<img src="images/snacks.png">
+</div>
+<p class="snackreward">Snack Break <br><br>
+	    5<img class="snackreward" src="images/reward_icon.png"></p>
+
+<div id="games">
+	<img src="images/videogames.png">
+</div>
+<p class="gamesreward">Video Games <br><br>
+	    5<img class="gamesreward" src="images/reward_icon.png"></p>
+
+<div id="sports">
+	<img src="images/sports.png">
+</div>
+<p class="sportreward">Outdoor Break <br><br>
+	    5<img class="sportreward" src="images/reward_icon.png"></p>
+
+<div id="custom">
+	<img src="images/trophy.png">
+</div>
+<p class="customreward">Custom <br><br>
+	    5<img class="customreward" src="images/reward_icon.png"></p>
+
+
+
+
+
+</div>
+</body>
+</html>

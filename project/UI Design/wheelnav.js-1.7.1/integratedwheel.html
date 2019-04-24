@@ -18,11 +18,14 @@
             //font-family: Helvetica, Arial, sans-serif;
 			font-family: 'Roboto', sans-serif;
 			overflow: hidden;
+			
         }
 		
 		.Main{
 		display: none;
 		z-index: 0;
+		cursor: url(bullet-grey.png), auto;
+		height: 1080px;
 		}
 		
          #container {
@@ -47,6 +50,48 @@
 		font-size: 100px;
 		font-family: 'Roboto', sans-serif;
 		}
+		
+		
+		#boxWrapper{text-align: center; display: none;}
+		#verifyBox{
+		border: 2px solid #50A9FA;
+		color: white;
+		background-color: black;
+		width: 33%;
+		top: 33%;
+		left: 33%;
+		position: absolute;
+		z-index: 3;
+		height: 10%;
+		}
+		
+		#verifyBox input{
+			background-color: black;
+			color: white;
+			border: 1px solid #50A9FA;
+			padding-left: 50px;
+			padding-right: 50px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		
+		#rewardWrap{
+			color:white;
+			position: absolute;
+			top: 65%;
+			left:3%;
+			font-size: 30px;
+		}
+		
+		#rwb{
+		width: 25%;
+		position:absolute;
+		}
+		
+		#rewardBalance{left:25%; top:120%;position:absolute;}
+		
 		.outerTime{
 		//text-align: center;
 		width: max-content;
@@ -66,9 +111,9 @@
 		}
 		#TD1 {position:absolute;top:0px;left:150px;}
 		#TD2 {position:absolute;top:20%;left:-125px;}
-		#TD3 {position:absolute;top:50%;left:-400px;font-size: 30px;}
+		#TD3 {position:absolute;top:50%;left:-400px;font-size: 30px; width: 300px; text-align: left; padding-left: 10px;}
 		#TD4 {position:absolute;top:80%;left:-100px;}
-		#TD5 {position:absolute;bottom:-10px;left:150px;}
+		#TD5 {position:absolute;bottom:0px;left:150px;}
 		
 		#TD3 input{
 		position: absolute;
@@ -87,6 +132,7 @@
 		  height: 25px;
 		  width: 25px;
 		  border: 2px solid white;
+		  
 		}
 		
 		#TD3:hover input ~ .checkmark {
@@ -209,6 +255,7 @@
 		left:50px;
 		width: 310px;
 		height: 200px;
+		pointer-events: none;
 		}
 		
 		
@@ -249,17 +296,122 @@
 				height: 50%;
 				width: 50%;
 				right: 9%;
-				position: absolute;
+				position: relative;
 			}
-			#to-do_Item input{
+			#to-do_Item input#micInput{
 				right: 35%;
 				position: absolute;
 			}
-			#to-do_Item select{
+			#to-do_Item input#due_date{
 				right: 35%;
 				position: absolute;
+			}
 
+			#to-do_Item label[for=quote1]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: 175px;
+				position: absolute;
 			}
+			#to-do_Item label[for=quote2]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: 110px;
+				position: absolute;
+			}
+			#to-do_Item label[for=quote3]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: 25px;
+				position: absolute;
+			}
+			#to-do_Item label[for=quote4]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: -50px;
+				position: absolute;
+			}
+			#to-do_Item label[for=quote5]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: -100px;
+				position: absolute;
+			}
+			span#quote_error{
+				position: absolute;
+				right: -150px;
+			}
+			#diamond1{
+			height: 20px;
+			width: 20px;
+			right: 10px;
+			position: absolute;
+
+			} 
+			#diamond2{
+			height: 20px;
+			width: 20px;
+			right: 10px;
+			position: absolute;
+			} 
+			#diamond3{
+			height: 20px;
+			width: 20px;
+			right: 10px;
+			position: absolute;
+			}
+			#to-do_Item label[for=gems5]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: 160px;
+				position: absolute;
+			}
+			#to-do_Item label[for=gems10]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: 100px;
+				position: absolute;
+			}
+			#to-do_Item label[for=gems15]{
+				color: white;
+				height: 50%;
+				width: 50%;
+				right: 25px;
+				position: absolute;
+			}
+/*			
+			input#gems10{
+				position: absolute;
+				right: -125px;
+			}
+			input#gems15{
+				position: absolute;
+				right: -200px;
+			}
+			#quote2{
+				position: absolute;
+				right: -50px;
+			}
+			#quote3{
+				position: absolute;
+				right: -75px;
+			}
+			#quote4{
+				position: absolute;
+				right: -100px;
+			}
+			#quote5{
+				position: absolute;
+				right: -125px;
+				
+			}*/
 			#to-do_Item{
 				z-index: 3;
 				border: solid;
@@ -287,7 +439,10 @@
 			position:absolute;
 			}
 			
-			
+			#micPNG{
+			position: absolute;
+			left: 5px;
+			}
 			
 			#plus{
 			top: 10px;
@@ -307,24 +462,172 @@
 			}
 			#date_format{
 				position: absolute;
-				top: 35%;
+				top: 40%;
 				right: 35%;
 			}
 			#quote_format{
 				position: absolute;
-				top: 45%;
+				top: 55%;
 				right: 35%;
 			}
 			#gems_format{
 			cursor:pointer;
 				position: absolute;
-				top: 55%;
+				top: 70%;
 				right: 35%;
 			}
 			#submission_format{
 				position: absolute;
-				top: 65%;
-				right: 35%;
+				top: 85%;
+				left: 17%;
+			}
+			#nap img { margin-left: 1016px;
+	       margin-top: 50px;
+	       margin-bottom: -88px;
+	       height: 175px;
+	       background: none;
+	       position: relative; }
+.napreward  {  color: white;
+		 	   margin-left: 1082px;
+		 	   margin-top: 12px;
+		 	   margin-bottom: 0px;
+		 	   position: absolute;
+		 	   background: none; }
+.napreward img { color: white;
+			 	 height: 35px;
+			 	 margin-left: 24px;
+			 	 margin-top: -11px;
+			 	 position: absolute; }
+#coffee img { margin-left: 862px;
+			  margin-bottom: -92px;
+	      	  height: 175px;
+	      	  background: none;
+	      	  position: relative; }
+.coffeereward  { color: white;
+		 	   	 margin-left: 921px;
+		 	   	 margin-top: 12px;
+		 	   	 margin-bottom: 0px;
+		 	   	 position: absolute;
+		 	   	 background: none; }
+.coffeereward img { color: white;
+			 	 	height: 35px;
+			 	 	margin-left: 37px;
+			 	 	margin-top: -11px;
+			 	 	position: absolute; }
+#snacks img { margin-left: 1017px;
+			  margin-bottom: -145px;
+			  height: 175px;
+			  background: none;
+			  position: relative; }
+.snackreward  { color: white;
+		 	   	margin-left: 1078px;
+		 	   	margin-top: 71px;
+		 	   	margin-bottom: 0px;
+		 	   	position: absolute;
+		 	   	background: none; }
+.snackreward img { color: white;
+			 	   height: 35px;
+			 	   margin-left: 37px;
+			 	   margin-top: -11px;
+			 	   position: absolute; }
+#games img { margin-left: 1170px;
+			 margin-top: -124px;
+			 height: 175px;
+			 background: none;
+			 position: relative; }
+.gamesreward  { color: white;
+		 	    margin-left: 1231px;
+		 	    margin-top: -82px;
+		 	    margin-bottom: 0px;
+		 	    position: absolute;
+		 	    background: none; }
+.gamesreward img { color: white;
+			 	   height: 35px;
+			 	   margin-left: 40px;
+			 	   margin-top: -11px;
+			 	   position: absolute; }
+#sports img { margin-left: 863px;
+			  margin-top: 2px;
+			  height: 175px;
+			  background: none;
+			  position: relative; }
+.sportreward  { color: white;
+		 	    margin-left: 921px;
+		 	    margin-top: -70px;
+		 	    margin-bottom: 0px;
+		 	    position: absolute;
+		 	    background: none; }
+.sportreward img { color: white;
+			 	   height: 35px;
+			 	   margin-left: 47px;
+			 	   margin-top: -11px;
+			 	   position: absolute; }
+#social img { margin-left: 1170px;
+			  margin-top: 176px;
+			  height: 175px;
+			  background: none;
+			  position: absolute; }
+.socialreward  { color: white;
+		 	     margin-left: 1231px;
+		 	     margin-top: 267px;
+		 	     margin-bottom: 0px;
+		 	     position: absolute;
+		 	     background: none;
+				}
+.socialreward img { color: white;
+			 	    height: 35px;
+			 	 	margin-left: 47px;
+			 	 	margin-top: -11px;
+			 	 	position: absolute; }
+#custom img { margin-left: 1023px;
+			  margin-top: -93px;
+			  height: 175px;
+			  background: none;
+			  position: absolute; }
+.customreward  { color: white;
+		 	     margin-left: 1095px;
+		 	     margin-top: 7px;
+		 	     margin-bottom: 0px;
+		 	     position: absolute;
+		 	     background: none; }
+.customreward img { color: white;
+			 	    height: 35px;
+			 	 	margin-left: 21px;
+			 	 	margin-top: -11px;
+			 	 	position: absolute; }
+
+
+
+#mainDiamond{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
+p#pointDisplay{
+	color: white;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 200px;
+	top: 150px;
+}
+#movement{
+	position: absolute;
+	right: 100px;
+	height: 1080px;
+}
+#error{
+	color: white;
+	border: solid;
+	border-color: #50A9FA;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 250px;
+	top 250px;
+}
 			}
     </style>
 
@@ -376,8 +679,8 @@
    <div id="to-do_Form" style="display: none">
       <form id="to-do_Item" name="to-do Item" >
 		<div id="name_format">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" x-webkit-speech>
+          <label for="task">Task:</label>
+          <input type="text" id="micInput" name="task"><img src="micpic.png" id="micPNG" width="25" height="25" onclick="recognition.start();" />
           <span id="name_error">*</span><br />
         </div>
 		<div id="date_format">
@@ -387,24 +690,20 @@
         </div>
 		<div id="quote_format">
           <label for="quote">Quote Category</label>
-      <select id="quote">
-          <option value="spiritual">Spiritual</option>
-          <option value="motivational">Motivational</option>
-          <option value="education">Education</option>
-          <option value="health">Health</option>
-          <option value="stress_relief">Stress Relief</option>
-      </select>
+			<label for="quote1"><input type="radio" id="quote1" name="quote" value="1">Spiritual</label>
+        	<label for="quote2"><input type="radio" id="quote2" name="quote" value="5">Motivation</label>
+			<label for="quote3"><input type="radio" id="quote3" name="quote" value="2">Education</label>
+			<label for="quote4"><input type="radio" id="quote4" name="quote" value="3">Health</label>
+			<label for="quote5"><input type="radio" id="quote5" name="quote" value="4">Stress Relief</label>
           <span id="quote_error">*</span><br />
 		</div>
 		<div id="gems_format">
           <label for="gems">Gems Amount:</label>
-          <select id="gems">
-            <option value="five">Five</option>
-            <option value="ten">Ten</option>
-            <option value="fifteen">Fifteen</option>
-          </select>
+		  <label for="gems5"><input type="radio" id="gems5" name="gem" value="5"><img id="diamond1" src="reward_icon.png">5</label>
+		  <label for="gems10"><input type="radio" id="gems10" name="gem" value="10"><img id="diamond2" src="reward_icon.png">10</label>
+		  <label for="gems15"><input type="radio" id="gems15" name="gem" value="15"><img id="diamond3" src="reward_icon.png">15</label>
           <span id=gems_Error>*</span><br />
-		  </div>
+		</div>
 		  
 		<div id="submission_format">
           <label>&nbsp;</label>
@@ -413,19 +712,52 @@
       </form>
    </div>
    </div>
+<script>
+// speech recognition code
+var name = document.getElementById('name');
+
+<!-- document.querySelector('#micPNG').addEventListener('click', function() { -->
+	<!-- recognition.start(); -->
+<!-- }) -->
+
+recognition.onresult = function(event) {
+	var last = event.results.length - 1;
+	var words = event.results[last][0].transcript;
+	$('#micInput').val(words);
+	console.log(words);
+	//recognition.wordsSpoken += words;
+}
+
+recognition.onerror = function(event) {
+  // "message" here
+	name.textContent = 'Error occurred in recognition: ' + event.error;
+}
+
+</script>
+
 	<div class="Main">
+	<div id="rewardWrap">
+		<span><u>Gems Balance</u></span><br>
+		<img src="reward_icon.png" alt="gem" id="rwb"><span id="rewardBalance">0</span>
+	</div>
+	<div id="boxWrapper">
+	<div id="verifyBox">
+		<p>Would you like to compete this item and redeem your reward points?</p>
+		<input type="button" value="Yes" onclick="finish()"><input type="button" value="No" onclick="removeBox()">
+	</div>
+	</div>
 	<img src="reward_icon.png" id="rewardButton" width="40" height="40" onclick="goToReward();"/>
 	<img src="lock.png" id="lockButton" width="24" height="24" onclick="goToLock();"/>
 	<input type="button" name="+" value="+" id="plus" onclick="showForm()">
 	<ul id="tdList">
-	<li id="TD1">This is the first To-do</li>
-	<li id="TD2">This is the second To-do</li>
-	<i class="up"></i>
-	<label><li id="TD3"><span id="T3wrapper">This is the third To-do</span><input id="selectorBox" type="checkbox" name="select">
+	<li id="TD1">Add items to your list</li>
+	<li id="TD2">Add items to your list</li>
+	<i class="up" onclick="cycleUp();"></i>
+	<label><li id="TD3"><span id="T3wrapper">Add items to your list</span><input id="selectorBox" type="checkbox" name="select" onclick="verify()">
 	<span class="checkmark"></span></li></label>
-	<i class="down"></i>
-	<li id="TD4">This is the fourth To-do</li>
-	<li id="TD5">This is the fifth To-do</li>
+	<i class="down" onclick="cycleDown();"></i>
+	<li id="TD4">Add items to your list</li>
+	<li id="TD5">Add items to your list</li>
 	</ul>
 <div id="weather">
 <div style="width:100%;
@@ -445,25 +777,11 @@
     	position: absolute;
     	right:-500px;
 		top: 45px;">
-	
- 
-  
+	  
 </div>
 
-<script>
-// speech recognition code
-var form = document.getElementById('to-do_Form');
 
-recognition.onresult = function(event) {
-	var last = event.results.length - 1;
-	var words = event.results[last][0].transcript;
-	form.textContent = words;
-	console.log(words);
-	//recognition.wordsSpoken += words;
-}
-
-
-</script>
+</div>
 
 <script>
 var toDoList = [];
@@ -471,6 +789,10 @@ var nextAval = 0;
 var first = 0;
 var last = 0;
 var toDoHTML = [];
+var centerIndex = 0;
+var totalItems = 0;
+var completedItems = 0;
+var rewardBalance = 0;
 toDoHTML[0] = document.getElementById("T3wrapper");
 toDoHTML[1] = document.getElementById("TD4");
 toDoHTML[2] = document.getElementById("TD5");
@@ -480,7 +802,8 @@ toDoHTML[4] = document.getElementById("TD2");
 
 	function submitToDo()
 	{
-		
+		var x = document.getElementById('to-do_Form');
+		x.style.display = 'none';
 		var toDo = {
 			name: "Jeff",
 			dateDay: 0,
@@ -491,49 +814,251 @@ toDoHTML[4] = document.getElementById("TD2");
 			
 		}
 		
-		toDo.name = $('#name').val();
+		toDo.name = $('#micInput').val();
 		toDo.dateDay = $('#name').val();
 		toDo.dateMonth = $('#name').val();
 		toDo.dateYear = $('#name').val();
-		toDo.gemVal = $('#name').val();
-		toDo.quoteCat = $('#name').val();
+		toDo.gemVal = $("input[name='gem']:checked").val();
+		toDo.quoteCat = $("input[name='quote']:checked").val();
 		toDoList[nextAval] = toDo;
-		alert("made it this far");
-		for(var i = 0, j = nextAval; i < 5; i++,j--)
-		{
-			if( j >= 0)
-			{
-				toDoHTML[i].innerHTML = "" + toDoList[j].name;
-			}
-		}
+		totalItems++;
+		
+		centerIndex = nextAval;
 		nextAval++;
+		updateList();
+		updateProgress();
 		
 	}
 	
+	function updateProgress(){
+	var i = completedItems/totalItems;
+	bar.animate(.5 + i/2);
+	if(i == 1)
+	{
+		totalItems = 0;
+		completedItems = 0;
+	}
+	}
+	
+	function cycleUp(){
+	if(centerIndex == 0){
+		centerIndex  = nextAval-1;
+	}else{
+		centerIndex--;
+	}
+	updateList();
+}
+
+function cycleDown(){
+	if(centerIndex == 24 || centerIndex == nextAval-1){
+		centerIndex  = 0;
+	}else{
+		centerIndex++;
+	}
+	
+	updateList();
+}
+	
+	function updateList(){
+		alert(centerIndex);
+		if(nextAval > 0){
+			toDoHTML[0].innerHTML = "" + toDoList[centerIndex].name;
+			updateQuote(toDoList[centerIndex].quoteCat);
+		}else{
+			toDoHTML[0].innerHTML = "Add items to your list";
+		}
+		
+		if(nextAval > 3)
+		{
+			if(centerIndex - 1 >= 0 && nextAval > 3)
+				{
+					toDoHTML[1].innerHTML = "" + toDoList[centerIndex-1].name;
+				}else
+				{
+					if(nextAval > 3){
+					var t = (centerIndex - 1) + nextAval;
+					toDoHTML[1].innerHTML = "" + toDoList[t].name;
+					}
+				}
+		}else{
+			toDoHTML[1].innerHTML = "Add items to your list";
+		}	
+		 
+		if(nextAval > 4){
+			if(centerIndex - 2 >= 0 && nextAval > 4)
+			{
+				toDoHTML[2].innerHTML = "" + toDoList[centerIndex-2].name;
+			}else
+			{
+				if(nextAval > 4){
+				var t = (centerIndex - 2) + nextAval;
+				toDoHTML[2].innerHTML = "" + toDoList[t].name;
+				}
+			}
+		}else{
+			toDoHTML[2].innerHTML = "Add items to your list";
+		}
+		
+		if(nextAval > 2){
+			if(centerIndex + 2 < nextAval)
+			{
+				toDoHTML[3].innerHTML = "" + toDoList[centerIndex+2].name;
+			}else
+			{
+				if(nextAval > 2){
+				var t = (centerIndex + 2) - nextAval;
+				toDoHTML[3].innerHTML = "" + toDoList[t].name;
+				}
+			}
+		}else{
+			toDoHTML[3].innerHTML = "Add items to your list";
+		}
+		
+		if(nextAval > 1){
+			if(centerIndex + 1 < nextAval)
+			{
+				toDoHTML[4].innerHTML = "" + toDoList[centerIndex+1].name;
+			}else
+			{
+				if(nextAval > 1){
+				var t = (centerIndex + 1) - nextAval;
+				toDoHTML[4].innerHTML = "" + toDoList[t].name;
+				}
+			}
+		}else{
+			toDoHTML[4].innerHTML = "Add items to your list";
+		}
+		
+	}
+	
+function verify(){
+	
+	setTimeout(function(){
+		document.getElementById('boxWrapper').style.display ="block";
+	}, 200);
+	
+}
+
+function removeBox(){
+	document.getElementById('boxWrapper').style.display ="none";
+	document.getElementById("selectorBox").checked = false;
+}
+
+function finish(){
+	completedItems++;
+	document.getElementById('boxWrapper').style.display ="none";
+	updateRewardBalance(toDoList[centerIndex].gemVal);
+	for(var i = centerIndex; i < nextAval; i++)
+	{
+		toDoList[i] = toDoList[i+1];
+	}
+	if(centerIndex != 0){
+		centerIndex--;
+	}
+	nextAval--;
+	updateList();
+	updateProgress();
+}	
+
+function updateRewardBalance(a){
+	var rwb = document.getElementById('rewardBalance');
+	var amount = parseInt(a);
+	var newBal = amount + rewardBalance;
+	if(a > 0){
+		var animateReward = setInterval(function(){ 
+			rwb.style.color = "rgb(57,255,20)";
+			rewardBalance++;
+			rwb.innerHTML = rewardBalance;
+			if(rewardBalance == newBal){
+			rwb.style.color = "rgb(255,255,255)";
+			clearInterval(animateReward);
+			//updateRewardBalance(-15);
+			}
+		}, 100);
+		
+	}else{
+		var animateReward = setInterval(function(){
+			rwb.style.color = "red";
+			rewardBalance--;
+			rwb.innerHTML = rewardBalance;
+			if(rewardBalance == newBal){
+			rwb.style.color = "rgb(255,255,255)";
+			clearInterval(animateReward);
+			}
+		}, 100);
+	}
+	document.getElementById("selectorBox").checked = false;
+	
+	
+}
 	
 function showForm() {
 
 	var x = document.getElementById('to-do_Form');
 	if (x.style.display === 'none') {
 	x.style.display = 'block';
-	// start speech recognition
-	recognition.start();
 	} else {
 	x.style.display = 'none';
-	// stop speech recognition
-	recognition.stop();
 	}
-
 }
-	
-	
+
+$( "#TD3" ).mouseover(function() {
+	if(toDoList[centerIndex] != null)
+	{
+		setTimeout(function(){ 
+		if($('#TD3').is(":hover"))
+		{
+			document.getElementById('TD3').click();
+		}
+		}, 2000);
+	}
+});
+
 	
 function goToReward(){
-	window.location.href = "https://google.com";
+	window.location.href = "https://www.crownawards.com/StoreFront/MDL.Medals-Dogtags.cat";
 }
 function goToLock(){
 	window.location.href = "../../page.html";
 }
+
+function gemsNumber(){
+	document.getElementById("pointDisplay").innerHTML = "" + rewardsPoints;
+	if(rewardsPoints <= 0){
+		document.getElementById("pointDisplay").innerHTML = "0";
+		document.getElementById("error").innerHTML = "You are out of points! Complete tasks to earn more points.";
+		if(document.getElementById("error").style.display === "none"){
+			document.getElementById("error").style.display = "block";
+		}
+		else{
+			document.getElementById("error").style.display = "none";
+		}
+	}
+}
+function rewardsFunction(){
+	
+	rewardsPoints = rewardsPoints - 5;
+	document.getElementById("pointDisplay").innerHTML = "" + rewardsPoints;
+	if(rewardsPoints <= 0){
+	document.getElementById("pointDisplay").innerHTML = "0";
+	document.getElementById("error").innerHTML = "You are out of points! Complete tasks to earn more points.";
+		if(document.getElementById("error").style.display === "none"){
+			document.getElementById("error").style.display = "block";
+		}
+		else{
+			document.getElementById("error").style.display = "none";
+		}
+	}
+}
+
+function slidefeature(){
+		if(document.getElementById("rewards_section").style.display === "none"){
+		   document.getElementById("rewards_section").style.display = "block";
+		}
+		else{
+		   document.getElementById("rewards_section").style.display = "none";
+		}
+	}
 
 </script>
 
@@ -558,92 +1083,146 @@ function goToLock(){
 </script>
 <div id="quotes">
 <script>
-var cat = 1
-if(cat == 1)
-{
-	var bible = ["\"The Lord is my strength and my song, and he has become my salvation; this is my God, and I will praise him, my fathers God, and I will exalt him.\" - Exodus 15:2", 
-	"\"But they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint.\" - Isaiah 40:31", 
-	"\"Therefore encourage one another and build each other up, just as in fact you are doing\" - 1 Thessalonians 5:11", 
-	"\"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future\" - Jeremiah 29:11", 
-	"\"Casting all your anxieties on him, because he cares for you.\" - 1 Peter 5:7", 
-	"\"Cast your burden on the LORD, and he will sustain you; he will never permit the righteous to be moved.\" - Psalm 55:22", 
-	"\"I have set the LORD always before me; because he is at my right hand, I shall not be shaken.\" - Psalm 16:8", 
-	"\"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.\" - Proverbs 3:5-6", 
-	"\"Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go.\" - Joshua 1:9", 
-	"\"The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.\" - Lamentations 3:22-23"];
-	var bibleQuote = bible[Math.floor(Math.random()*bible.length)];
-	document.write(bibleQuote)
-}
-if(cat == 2)
-{
-	var education = ["\"Education is the most powerful weapon which you can use to change the world.\" - Nelson Mandela", 
-	"\"Education is the passport to the future, for tomorrow belongs to those who prepare for it today\"- Malcolm X", 
-	"\"Develop a passion for learning. If you do, you will never cease to grow\" - Anthony J. D'Angelo", 
-	"\"Learning is not attained by chance; it must be sought for with ardour and diligence.\" – Abigail Adams", 
-	"\"An investment in knowledge pays the best interest\" –  Benjamin Franklin", 
-	"\"Change is the end result of all true learning\" – Leo Buscaglia", 
-	"\"Live as if you were to die tomorrow. Learn as if you were to live forever.\" - Mahatma Gandhi", 
-	"\"Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family\" – Kofi Annan", 
-	"\"Education is a better safeguard of liberty than a standing army\"– Edward Everett", 
-	"\"Educating the mind without educating the heart is no education at all.\" - Aristotle"];
-	var educationQuote = education[Math.floor(Math.random()*education.length)];
-	document.write(educationQuote)
-}
-if(cat == 3)
-{
-	var health = ["\"To keep the body in good health is a duty… otherwise we shall not be able to keep our mind strong and clear.\" -Buddha",
-	 "\"Living a healthy lifestyle will only deprive you of poor health, lethargy, and fat.\" - Jill Johnson", 
-	 "\"It is health that is real wealth and not pieces of gold and silver.\" -Mahatma Gandhi", 
-	 "\"He who has health has hope and he who has hope has everything.\"– Arabian Proverb", 
-	 "\"Good things come to those who sweat\" – Unknown", 
-	 "\"Exercise not only changes your body, it changes your mind, your attitude and your mood.\" - Unknown", 
-	 "\"Take care of your body. It's the only place you have to live\" - Jim Rohn", 
-	 "\"If it doesn’t challenge you, it doesn’t change you.\" -Anonymous", 
-	 "\"The pain you feel today will be the strength you feel tomorrow.\" - Anonymous", 
-	 "\"The only bad workout is the one that didn’t happen.\" -Anonymous"];
-	var healthQuote = health[Math.floor(Math.random()*health.length)];
-	document.write(healthQuote)
-}
-if(cat == 4)
-{
-	var stressRelief = ["\"The greatest mistake you can make in life is to be continually fearing you will make one.\"  - Elbert Hubbard", 
-	"\"Take rest; a field that has rested gives a bountiful crop.\" - Ovid", "\"If you want to conquer the anxiety of life, live in the moment, live in the breath.\" - Amit Ray", 
-	"\"When you realize how perfect everything is you will tilt your head back and laugh at the sky.\" - Buddha", 
-	"\"The greatest weapon against stress is our ability to choose one thought over another.\"- William James.",
-	 "\"Rule number one is, don’t sweat the small stuff. Rule number two is, it’s all small stuff.\" - Robert Eliot", 
-	 "\"Many a calm river begins as a turbulent waterfall, yet none hurtles and foams all the way to the sea.\" - Mikhail Lermontov", 
-	 "\"Set peace of mind as your highest goal, and organize your life around it.\" - Brian Tracy", 
-	 "\"Within you, there is a stillness and a sanctuary to which you can retreat at any time and be yourself.\" - Hermann Hesse", 
-	 "\"There are times when we stop, we sit still. We listen and breezes from a whole other world begin to whisper.\" -James Carroll"];
-	var stressReliefQuote = stressRelief[Math.floor(Math.random()*stressRelief.length)];
-	document.write(stressReliefQuote)
-}
-if(cat == 5)
-{
-	var motivation = ["\"People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do.\" – Rob Siltanen", 
-	"\"It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.\" –Vince Lombardi", 
-	"\"Don’t Let Yesterday Take Up Too Much Of Today.\" – Will Rogers", 
-	"\"There are no secrets to success. It is the result of preparation, hard work, and learning from failure.\" - Colin Powell", 
-	"\"Character cannot be developed in ease and quiet. Only through experience of trial and suffering can the soul be strengthened, ambition inspired, and success achieved.\" - Helen Keller", 
-	"\"Don't let the fear of losing be greater than the excitement of winning.\" - Robert Kiyosaki", 
-	"\"I owe my success to having listened respectfully to the very best advice, and then going away and doing the exact opposite.\" - G. K. Chesterton", 
-	"\"Successful people do what unsuccessful people are not willing to do. Don't wish it were easier; wish you were better.\" - Jim Rohn", 
-	"\"There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.\"- Ray Goforth", 
-	"\"Success is not final; failure is not fatal: It is the courage to continue that counts.\"- Winston S. Churchill"];
-	var motivationQuote = motivation[Math.floor(Math.random()*motivation.length)];
-	document.write(motivationQuote)
+function updateQuote(cat){
+	var selectedQuote = "";
+	if(cat == 1)
+	{
+		var bible = ["\"The Lord is my strength and my song, and he has become my salvation; this is my God, and I will praise him, my fathers God, and I will exalt him.\" - Exodus 15:2", 
+		"\"But they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint.\" - Isaiah 40:31", 
+		"\"Therefore encourage one another and build each other up, just as in fact you are doing\" - 1 Thessalonians 5:11", 
+		"\"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future\" - Jeremiah 29:11", 
+		"\"Casting all your anxieties on him, because he cares for you.\" - 1 Peter 5:7", 
+		"\"Cast your burden on the LORD, and he will sustain you; he will never permit the righteous to be moved.\" - Psalm 55:22", 
+		"\"I have set the LORD always before me; because he is at my right hand, I shall not be shaken.\" - Psalm 16:8", 
+		"\"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.\" - Proverbs 3:5-6", 
+		"\"Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go.\" - Joshua 1:9", 
+		"\"The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.\" - Lamentations 3:22-23"];
+		selectedQuote = bible[Math.floor(Math.random()*bible.length)];
+
+	}
+	if(cat == 2)
+	{
+		var education = ["\"Education is the most powerful weapon which you can use to change the world.\" - Nelson Mandela", 
+		"\"Education is the passport to the future, for tomorrow belongs to those who prepare for it today\"- Malcolm X", 
+		"\"Develop a passion for learning. If you do, you will never cease to grow\" - Anthony J. D'Angelo", 
+		"\"Learning is not attained by chance; it must be sought for with ardour and diligence.\" – Abigail Adams", 
+		"\"An investment in knowledge pays the best interest\" –  Benjamin Franklin", 
+		"\"Change is the end result of all true learning\" – Leo Buscaglia", 
+		"\"Live as if you were to die tomorrow. Learn as if you were to live forever.\" - Mahatma Gandhi", 
+		"\"Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family\" – Kofi Annan", 
+		"\"Education is a better safeguard of liberty than a standing army\"– Edward Everett", 
+		"\"Educating the mind without educating the heart is no education at all.\" - Aristotle"];
+		selectedQuote = education[Math.floor(Math.random()*education.length)];
+
+	}
+	if(cat == 3)
+	{
+		var health = ["\"To keep the body in good health is a duty… otherwise we shall not be able to keep our mind strong and clear.\" -Buddha",
+		 "\"Living a healthy lifestyle will only deprive you of poor health, lethargy, and fat.\" - Jill Johnson", 
+		 "\"It is health that is real wealth and not pieces of gold and silver.\" -Mahatma Gandhi", 
+		 "\"He who has health has hope and he who has hope has everything.\"– Arabian Proverb", 
+		 "\"Good things come to those who sweat\" – Unknown", 
+		 "\"Exercise not only changes your body, it changes your mind, your attitude and your mood.\" - Unknown", 
+		 "\"Take care of your body. It's the only place you have to live\" - Jim Rohn", 
+		 "\"If it doesn’t challenge you, it doesn’t change you.\" -Anonymous", 
+		 "\"The pain you feel today will be the strength you feel tomorrow.\" - Anonymous", 
+		 "\"The only bad workout is the one that didn’t happen.\" -Anonymous"];
+		selectedQuote = health[Math.floor(Math.random()*health.length)];
+		
+	}
+	if(cat == 4)
+	{
+		var stressRelief = ["\"The greatest mistake you can make in life is to be continually fearing you will make one.\"  - Elbert Hubbard", 
+		"\"Take rest; a field that has rested gives a bountiful crop.\" - Ovid", "\"If you want to conquer the anxiety of life, live in the moment, live in the breath.\" - Amit Ray", 
+		"\"When you realize how perfect everything is you will tilt your head back and laugh at the sky.\" - Buddha", 
+		"\"The greatest weapon against stress is our ability to choose one thought over another.\"- William James.",
+		 "\"Rule number one is, don’t sweat the small stuff. Rule number two is, it’s all small stuff.\" - Robert Eliot", 
+		 "\"Many a calm river begins as a turbulent waterfall, yet none hurtles and foams all the way to the sea.\" - Mikhail Lermontov", 
+		 "\"Set peace of mind as your highest goal, and organize your life around it.\" - Brian Tracy", 
+		 "\"Within you, there is a stillness and a sanctuary to which you can retreat at any time and be yourself.\" - Hermann Hesse", 
+		 "\"There are times when we stop, we sit still. We listen and breezes from a whole other world begin to whisper.\" -James Carroll"];
+		selectedQuote = stressRelief[Math.floor(Math.random()*stressRelief.length)];
+		
+	}
+	if(cat == 5)
+	{
+		var motivation = ["\"People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do.\" – Rob Siltanen", 
+		"\"It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.\" –Vince Lombardi", 
+		"\"Don’t Let Yesterday Take Up Too Much Of Today.\" – Will Rogers", 
+		"\"There are no secrets to success. It is the result of preparation, hard work, and learning from failure.\" - Colin Powell", 
+		"\"Character cannot be developed in ease and quiet. Only through experience of trial and suffering can the soul be strengthened, ambition inspired, and success achieved.\" - Helen Keller", 
+		"\"Don't let the fear of losing be greater than the excitement of winning.\" - Robert Kiyosaki", 
+		"\"I owe my success to having listened respectfully to the very best advice, and then going away and doing the exact opposite.\" - G. K. Chesterton", 
+		"\"Successful people do what unsuccessful people are not willing to do. Don't wish it were easier; wish you were better.\" - Jim Rohn", 
+		"\"There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.\"- Ray Goforth", 
+		"\"Success is not final; failure is not fatal: It is the courage to continue that counts.\"- Winston S. Churchill"];
+		selectedQuote = motivation[Math.floor(Math.random()*motivation.length)];
+		
+	}
+	document.getElementById('quotes').innerHTML = "" + selectedQuote;
+
 }
 $(document).ready(function(){
 		$('.Main').fadeIn(3000);
 		});
 		
-		setTimeout(function(){ bar.animate(1); }, 1000);
+		setTimeout(function(){ bar.animate(.50); }, 1000);
+		updateQuote(5);
 
 </script>
 </div>
 <div class = "outerTime">
 <div id="txt"></div>
 </div>
+</div>
+<div id="rewards_section">
 
+<div id="error" style="display: none"></div>
+
+
+
+<div id="movement">
+<div id="nap" onclick="rewardsFunction()">
+	<img src="images/nap.png" onclick="rewardsFunction()">
+</div>
+<p class="napreward">Nap Time<br>
+5&nbsp;&nbsp;<img class="napreward" src="images/reward_icon.png" ></p>
+
+<div id="social" onclick="rewardsFunction()">
+	<img src="images/social.png">
+</div>
+<p class="socialreward" style="text-align:center width:100px">Social 
+Media<br>
+	    5<img class="socialreward" src="images/reward_icon.png"></p>
+
+<div id="coffee" onclick="rewardsFunction()">
+	<img src="images/coffee.png"></a>
+</div>
+<p class="coffeereward">Coffee Break <br>
+	    5&nbsp;&nbsp;&nbsp;<img class="coffeereward" src="images/reward_icon.png"></p>
+
+<div id="snacks" onclick="rewardsFunction()">
+	<img src="images/snacks.png">
+</div>
+<p class="snackreward">Snack Break <br>
+	    5&nbsp;&nbsp;<img class="snackreward" src="images/reward_icon.png"></p>
+
+<div id="games" onclick="rewardsFunction()">
+	<img src="images/videogames.png">
+</div>
+<p class="gamesreward">&nbsp;&nbsp;Gaming <br>
+	    5<img class="gamesreward" src="images/reward_icon.png"></p>
+
+<div id="sports" onclick="rewardsFunction()">
+	<img src="images/sports.png">
+</div>
+<p class="sportreward">Outdoor Break <br>
+	    5&nbsp;&nbsp;<img class="sportreward" src="images/reward_icon.png"></p>
+
+<div id="custom" onclick="rewardsFunction()">
+	<img src="images/trophy.png">
+</div>
+<p class="customreward">Custom <br>
+	    5<img class="customreward" src="images/reward_icon.png"></p>
 </div>
 </body>

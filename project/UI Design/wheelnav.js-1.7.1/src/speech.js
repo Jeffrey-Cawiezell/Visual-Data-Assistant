@@ -55,8 +55,4 @@ recognition.onspeechend = function() {
 	recognition.stop();
 };
 
-recognition.onerror = function(event) {
-  // "message" here
-	message.textContent = 'Error occurred in recognition: ' + event.error;
-}
 
