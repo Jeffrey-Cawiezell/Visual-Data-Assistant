@@ -9,7 +9,6 @@
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<!--<script src="C:/Users/test/Desktop/project/form.js"></script>-->
 	<script type="text/javascript" src="src/speech.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <style>
     
@@ -659,99 +658,6 @@ p#pointDisplay{
 		top: 26%;
 		position:absolute;
 	}
-	
-	#txt{
-    
-	width: max-content;
-    color: white;
-    top: 50px;  
-    display: inline-block;
-    font-size: 100px;
-	font-family: 'Roboto', sans-serif;
-	
-	
-}
-
-#helper{
-	bottom:0px;
-	left:125px;
-	font-size:20px;
-	position: absolute;
-	color: white;
-}
-
-.outerTime{
-	text-align: center;
-}
-
-
-.draggable {
-	cursor: grabbing;
-    position: absolute;
-    top: 23%;
-    background: rgb(0,0,0);
-    height: 50%;
-    width: 25%;
-    right: 0px;
-    text-align: center;
-    margin: 0px;
-	right: 15px;
-	
-}
-
-.collapsible {
-  background-color: #777;
-  cursor: grabbing;
-  /*cursor: url('cursor.cur'), auto; */
-  padding: 5px;
-  width: 5%;
-  position: absolute;
-  bottom: 0px;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 0 30px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #777;
-  color: white;
-  position: absolute;
-  bottom: 60px;
-
-}
-
-#bigPicture{
-text-align: left;
-padding: 10px;
-}
-
-#arrow{
-	top: 32%;
-	right: 25%;
-	position: absolute;
-	-webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-#dragWrapper{
-	width: 55%;
-	right: 0px;
-	height: 100%;
-	position: absolute;
-}
-
-#lockScrn{
-	display: block;
-}
-	
     </style>
 
     <script type="text/javascript">
@@ -800,7 +706,7 @@ padding: 10px;
 <body onload="startTime()">
    <div id="formWrapper">
    <div id="to-do_Form" style="display: none" >
-      <div id="to-do_Item" name="to-do Item" >
+      <form id="to-do_Item" name="to-do Item" >
 	  <span id="errorMessage"></span>
 		<div id="name_format">
           <label for="task">Task:</label>
@@ -832,7 +738,7 @@ padding: 10px;
           <label>&nbsp;</label>
           <input type="button" id="submission" value="Submit" onclick="submitToDo()"><br>
 		</div>
-      </div>
+      </form>
    </div>
    </div>
 <script>
@@ -854,7 +760,6 @@ recognition.onresult = function(event) {
 function micOn(){
 	recognition.start();
 	document.getElementById('listen').style.display="inline-block";
-	document.getElementById('errorMessage').style.display="none";
 }
 
 recognition.onerror = function(event) {
@@ -930,7 +835,6 @@ var centerIndex = 0;
 var totalItems = 0;
 var completedItems = 0;
 var rewardBalance = 0;
-var s = 1500;
 toDoHTML[0] = document.getElementById("T3wrapper");
 toDoHTML[1] = document.getElementById("TD4");
 toDoHTML[2] = document.getElementById("TD5");
@@ -1196,9 +1100,12 @@ $( "#TD3" ).mouseover(function() {
 		{
 			document.getElementById('TD3').click();
 		}
-		}, s);
+		}, 2000);
 	}
 });
+
+
+
 	
 function goToReward(){
 		if(document.getElementById('container').style.display != "none")
@@ -1225,8 +1132,7 @@ function goToReward(){
 		
 }
 function goToLock(){
-	document.getElementById('Main').style.display="none";
-	
+	window.location.href = "../../page.html";
 }
 
 function gemsNumber(){
@@ -1425,123 +1331,4 @@ Media<br>
 <p class="customreward">Custom <br>
 	    30<img class="customreward" src="images/reward_icon.png"></p>
 </div>
-
-<div id="lockScrn">
-
-<script>
-	function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  h = checkHour(h);
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('txt').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
-function checkHour(i){
-	if(i > 12){i -= 12};
-	if(i == 0){i = 12};
-	return i;
-}
-
-
-$( function() {
-$('.draggable').draggable({
-    axis: "x"
-});
-
-
-$('.draggable').on('mousedown', function() {
-		var x1 = x2 = $(".draggable").position().left;
-		var y1 = $(".draggable").position().top;
-		var y2 = ($(window).height() + $(".draggable").position().top);
-		$(".draggable").draggable('option', 'containment', 'parent');
-	});
-	
-	$( "#lockPic" ).mouseover(function() {
-		$( "#arrow" ).fadeOut(500);
-	});
-	
-	$( "#lockPic" ).mouseleave(function() {	
-		setTimeout(function(){ 
-		$( "#arrow" ).fadeIn(500);
-		}, 5000);
-	});
-	
-  
-  $( "body" ).mouseup(function() {
-  
-  var x = document.getElementById("lock");
-  var pos = x.getBoundingClientRect();
-  var t = pos.right;
-  var q = window.innerWidth * (3/4);
-  if(t < q)
-  {
-  	 document.getElementById("lock").innerHTML = '<img src="unlock.png" alt="lock ring">';
-	 setTimeout(function(){
-		window.location.href = "UI Design/wheelnav.js-1.7.1/integratedwheel.html";
-	 }, 1000);
-  }
-  
-});
-} );
-</script>
-
-<p id="helper">To begin lift one hand within view of the camera and use it to drag the lock to the center screen. For additional help mouse over "?"</p>
-<button class="collapsible" id="tutToggle"><img src="help.svg" alt="Help Icon" style = width:40px height:40px></button>
-<div class="content">
-	<h1>Welcome to your Visual Data Assistant!<h1>
-
-    <div id="bigPicture"><IMG SRC="noun_Fist_98642.png" style= height:60px width:60px>&nbsp;&nbsp;Drag Cursor - Fist</div>
-	<div id="bigPicture"><IMG SRC="click.png" style= height:45px width:45px>&nbsp;&nbsp;&nbsp;Click - Hover</div>
-    <div id="bigPicture"><IMG SRC="UI Design/wheelnav.js-1.7.1/bullet-grey.png" style= width:32px height:32px>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default Cursor - Open Hand</div>
-    <div id="bigPicture"><IMG SRC="diamond.png" style= height:50px>&nbsp;&nbsp;Cycle Rewards</div>
-    <div id="bigPicture"><IMG SRC="plus.png" style= height:50px>&nbsp;&nbsp;Add Item</div>
-    <div id="bigPicture"><IMG SRC="lock.png" style= height:50px>&nbsp;&nbsp;Lock Screen</div>
-    
-    <div id="bigPicture"><img src="micPic.png" alt="Mic Icon" style = width:40px height:40px>&nbsp;&nbsp;&nbsp;&nbsp;Microphone</div>
-
-</div>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-$('#tutToggle').mouseenter(function(){
-	$('#tutToggle').click();
-});
-$('#tutToggle').mouseleave(function(){
-	$('#tutToggle').click();
-});
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
-</script>
-<div class = "outerTime">
-<div id="txt"></div>
-</div>
-
-	<img src="giphy.gif" alt="arrow" id="arrow">
-	
-	<div id="dragWrapper">
-	<div class ="draggable" draggable="true" id = "lock">
-	<img src="lock.png" alt="lock ring" id="lockPic">
-	</div>
-	</div>	
-</div>
-
 </body>
-</html>
