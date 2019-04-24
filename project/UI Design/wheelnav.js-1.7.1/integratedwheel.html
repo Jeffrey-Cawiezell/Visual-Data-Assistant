@@ -782,7 +782,8 @@ recognition.onspeechend = function() {
 	<div class="boxWrapper">
 	<div id="completeBox" class="verifyBox">
 		<p>Would you like to compete this item and redeem your reward points?</p>
-		<input type="button" value="Yes" onclick="finish()"><input type="button" value="No" onclick="removeBox()">
+		<input type="button" id="Yes" value="Yes" onclick="finish()">
+		<input type="button" id="No" value="No" onclick="removeBox()">
 	</div>
 	</div>
 	<div class="boxWrapper">
@@ -1169,7 +1170,7 @@ function slidefeature(){
 		}
 	}
 
-// var hov = 2000;
+var hov = 2000;
 
 $( "#rewardButton" ).mouseover(function() {
 	{
@@ -1196,7 +1197,7 @@ $( ".weatherwidget-io" ).mouseover(function() {
 		setTimeout(function(){ 
 		if($('.weatherwidget-io').is(":hover"))
 		{
-			document.getElementById('weatherwidget-io').click();
+			document.getElementsByClassName('weatherwidget-io').click();
 		}
 		}, hov);
 	}
@@ -1208,6 +1209,38 @@ $( "#plus" ).mouseover(function() {
 		if($('#plus').is(":hover"))
 		{
 			document.getElementById('plus').click();
+		}
+		}, hov);
+	}
+});
+
+$( "#submission" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#submission').is(":hover"))
+		{
+			document.getElementById('submission').click();
+		}
+		}, hov);
+	}
+});
+
+$( "#Yes" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#Yes').is(":hover"))
+		{
+			document.getElementById('Yes').click();
+		}
+		}, hov);
+	}
+});
+$( "#No" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#No').is(":hover"))
+		{
+			document.getElementById('No').click();
 		}
 		}, hov);
 	}
