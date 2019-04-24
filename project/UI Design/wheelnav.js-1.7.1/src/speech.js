@@ -51,8 +51,6 @@ recognition.wordsSpoken = '';
  * })
  */
 
-recognition.onspeechend = function() {
-	recognition.stop();
-};
+
 
 

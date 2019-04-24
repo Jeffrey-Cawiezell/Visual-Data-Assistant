@@ -18,13 +18,14 @@
             //font-family: Helvetica, Arial, sans-serif;
 			font-family: 'Roboto', sans-serif;
 			overflow: hidden;
+			cursor: url(bullet-grey.png) 16 16, auto;
 			
         }
 		
 		.Main{
 		display: none;
 		z-index: 0;
-		cursor: url(bullet-grey.png), auto;
+		
 		height: 1080px;
 		}
 		
@@ -41,6 +42,14 @@
 		left: 50px;
 		}
 		
+		#rewards_section{
+			
+			
+			
+		}
+		
+		
+		
 		#txt{   
 		width: max-content;
 		color: white;
@@ -52,8 +61,9 @@
 		}
 		
 		
-		#boxWrapper{text-align: center; display: none;}
-		#verifyBox{
+		.boxWrapper{text-align: center;}
+		.verifyBox{
+		display: none;
 		border: 2px solid #50A9FA;
 		color: white;
 		background-color: black;
@@ -65,7 +75,7 @@
 		height: 10%;
 		}
 		
-		#verifyBox input{
+		.verifyBox input{
 			background-color: black;
 			color: white;
 			border: 1px solid #50A9FA;
@@ -280,6 +290,17 @@
 			text-align: center;
 			z-index:3;
 		}
+		
+		#listen{
+			height: 150px;
+			width: 150px;
+			right: -130px;
+			top:-62px;
+			position:absolute;
+			z-index: -1;
+			display: none;
+		}
+		
 		#formWrapper select{
 			cursor: pointer;
 		}
@@ -534,7 +555,9 @@
 			 margin-top: -124px;
 			 height: 175px;
 			 background: none;
-			 position: relative; }
+			 position: relative;
+			
+			}
 .gamesreward  { color: white;
 		 	    margin-left: 1231px;
 		 	    margin-top: -82px;
@@ -615,8 +638,10 @@ p#pointDisplay{
 }
 #movement{
 	position: absolute;
-	right: 100px;
-	height: 1080px;
+	right: 25%;
+	top: 21%;
+	width:max-content;
+	display: none;
 }
 #error{
 	color: white;
@@ -628,7 +653,11 @@ p#pointDisplay{
 	left: 250px;
 	top 250px;
 }
-			}
+	#errorMessage{
+		left:225px;
+		top: 26%;
+		position:absolute;
+	}
     </style>
 
     <script type="text/javascript">
@@ -676,33 +705,33 @@ p#pointDisplay{
 
 <body onload="startTime()">
    <div id="formWrapper">
-   <div id="to-do_Form" style="display: none">
+   <div id="to-do_Form" style="display: none" >
       <form id="to-do_Item" name="to-do Item" >
+	  <span id="errorMessage"></span>
 		<div id="name_format">
           <label for="task">Task:</label>
-          <input type="text" id="micInput" name="task"><img src="micpic.png" id="micPNG" width="25" height="25" onclick="recognition.start();" />
-          <span id="name_error">*</span><br />
+          <input type="text" id="micInput" name="task" required><img src="micpic.png" id="micPNG" width="25" height="25" onclick="micOn();">
+		  <img src="listen.gif" alt="listening" id="listen">
+          <br>
         </div>
-		<div id="date_format">
-          <label for="due_date">Date:</label>
-          <input type="text" id="due_date" name="due_date">
-          <span id="due_date_error">*</span><br />
-        </div>
+		
 		<div id="quote_format">
           <label for="quote">Quote Category</label>
-			<label for="quote1"><input type="radio" id="quote1" name="quote" value="1">Spiritual</label>
-        	<label for="quote2"><input type="radio" id="quote2" name="quote" value="5">Motivation</label>
-			<label for="quote3"><input type="radio" id="quote3" name="quote" value="2">Education</label>
-			<label for="quote4"><input type="radio" id="quote4" name="quote" value="3">Health</label>
-			<label for="quote5"><input type="radio" id="quote5" name="quote" value="4">Stress Relief</label>
-          <span id="quote_error">*</span><br />
+			<label for="quote1"><input type="radio" id="quote1" name="quote" value="1" required checked>Spiritual</label>
+        	<label for="quote2"><input type="radio" id="quote2" name="quote" value="5" required>Motivation</label>
+			<label for="quote3"><input type="radio" id="quote3" name="quote" value="2" required>Education</label>
+			<label for="quote4"><input type="radio" id="quote4" name="quote" value="3" required>Health</label>
+			<label for="quote5"><input type="radio" id="quote5" name="quote" value="4" required>Stress Relief</label>
+           <span></span>
+		  <br />
 		</div>
 		<div id="gems_format">
           <label for="gems">Gems Amount:</label>
-		  <label for="gems5"><input type="radio" id="gems5" name="gem" value="5"><img id="diamond1" src="reward_icon.png">5</label>
-		  <label for="gems10"><input type="radio" id="gems10" name="gem" value="10"><img id="diamond2" src="reward_icon.png">10</label>
-		  <label for="gems15"><input type="radio" id="gems15" name="gem" value="15"><img id="diamond3" src="reward_icon.png">15</label>
-          <span id=gems_Error>*</span><br />
+		  <label for="gems5"><input type="radio" id="gems5" name="gem" value="5" required checked><img id="diamond1" src="reward_icon.png" >5</label>
+		  <label for="gems10"><input type="radio" id="gems10" name="gem" value="10" required><img id="diamond2" src="reward_icon.png" >10</label>
+		  <label for="gems15"><input type="radio" id="gems15" name="gem" value="15" required><img id="diamond3" src="reward_icon.png" >15</label>
+		  <span></span>
+          <br />
 		</div>
 		  
 		<div id="submission_format">
@@ -728,10 +757,20 @@ recognition.onresult = function(event) {
 	//recognition.wordsSpoken += words;
 }
 
+function micOn(){
+	recognition.start();
+	document.getElementById('listen').style.display="inline-block";
+}
+
 recognition.onerror = function(event) {
   // "message" here
 	name.textContent = 'Error occurred in recognition: ' + event.error;
 }
+
+recognition.onspeechend = function() {
+	recognition.stop();
+	document.getElementById('listen').style.display="none";
+};
 
 </script>
 
@@ -740,10 +779,16 @@ recognition.onerror = function(event) {
 		<span><u>Gems Balance</u></span><br>
 		<img src="reward_icon.png" alt="gem" id="rwb"><span id="rewardBalance">0</span>
 	</div>
-	<div id="boxWrapper">
-	<div id="verifyBox">
+	<div class="boxWrapper">
+	<div id="completeBox" class="verifyBox">
 		<p>Would you like to compete this item and redeem your reward points?</p>
 		<input type="button" value="Yes" onclick="finish()"><input type="button" value="No" onclick="removeBox()">
+	</div>
+	</div>
+	<div class="boxWrapper">
+	<div id="warningBox" class="verifyBox">
+		<p>You do not have enough reward points. Continue completing tasks to earn more!</p>
+		<input type="button" value="Continue" onclick="removeWarningBox()">
 	</div>
 	</div>
 	<img src="reward_icon.png" id="rewardButton" width="40" height="40" onclick="goToReward();"/>
@@ -780,9 +825,6 @@ recognition.onerror = function(event) {
 	  
 </div>
 
-
-</div>
-
 <script>
 var toDoList = [];
 var nextAval = 0;
@@ -798,14 +840,50 @@ toDoHTML[1] = document.getElementById("TD4");
 toDoHTML[2] = document.getElementById("TD5");
 toDoHTML[3] = document.getElementById("TD1");
 toDoHTML[4] = document.getElementById("TD2");
-
-
-	function submitToDo()
-	{
-		var x = document.getElementById('to-do_Form');
-		x.style.display = 'none';
+/*
+	$('#submission').click(function(evt){
 		var toDo = {
 			name: "Jeff",
+			dateDay: 0,
+			dateMonth: 0,
+			dateYear: 0,
+			gemVal: 0,
+			quoteCat: 0,
+			
+		}
+
+		toDo.name = $('#micInput').val();
+		toDo.dateDay = $('#name').val();
+		toDo.dateMonth = $('#name').val();
+		toDo.dateYear = $('#name').val();
+		toDo.gemVal = $("input[name='gem']:checked").val();
+		toDo.quoteCat = $("input[name='quote']:checked").val();
+		toDoList[nextAval] = toDo;
+		var isValid = true;
+		
+		if(toDo.gemVal === ""){
+			isValid = false;
+			$('#micInput').next().next().text("This Field is Required");
+			
+		}
+		if(toDo.quoteCat === ""){
+			isValid = false;
+			$('#micInput').next().next().text("This Field is Required");
+			
+		}
+		if(isValid){
+			$('#to-do_Item').submit();
+			document.getElementById("to-do_Form").style.display = "none";
+		}
+		else{
+			evt.preventDefault();
+		}
+	});
+	*/
+	function submitToDo(evt)
+	{
+		var toDo = {
+			name: "",
 			dateDay: 0,
 			dateMonth: 0,
 			dateYear: 0,
@@ -820,6 +898,12 @@ toDoHTML[4] = document.getElementById("TD2");
 		toDo.dateYear = $('#name').val();
 		toDo.gemVal = $("input[name='gem']:checked").val();
 		toDo.quoteCat = $("input[name='quote']:checked").val();
+		
+		if(toDo.name === ""){
+			$('#errorMessage').html("This Field is Required");
+		}else{
+		var x = document.getElementById('to-do_Form');
+		x.style.display = 'none';
 		toDoList[nextAval] = toDo;
 		totalItems++;
 		
@@ -827,7 +911,7 @@ toDoHTML[4] = document.getElementById("TD2");
 		nextAval++;
 		updateList();
 		updateProgress();
-		
+		}
 	}
 	
 	function updateProgress(){
@@ -860,7 +944,7 @@ function cycleDown(){
 }
 	
 	function updateList(){
-		alert(centerIndex);
+
 		if(nextAval > 0){
 			toDoHTML[0].innerHTML = "" + toDoList[centerIndex].name;
 			updateQuote(toDoList[centerIndex].quoteCat);
@@ -932,21 +1016,26 @@ function cycleDown(){
 	}
 	
 function verify(){
-	
+	$('#TD3').css( 'pointer-events', 'none' );
 	setTimeout(function(){
-		document.getElementById('boxWrapper').style.display ="block";
+		document.getElementById('completeBox').style.display ="block";
 	}, 200);
 	
 }
 
 function removeBox(){
-	document.getElementById('boxWrapper').style.display ="none";
+	document.getElementById('completeBox').style.display ="none";
 	document.getElementById("selectorBox").checked = false;
+	$('#TD3').css( 'pointer-events', '' );
+}
+
+function removeWarningBox(){
+	document.getElementById('warningBox').style.display ="none";
 }
 
 function finish(){
 	completedItems++;
-	document.getElementById('boxWrapper').style.display ="none";
+	document.getElementById('completeBox').style.display ="none";
 	updateRewardBalance(toDoList[centerIndex].gemVal);
 	for(var i = centerIndex; i < nextAval; i++)
 	{
@@ -958,6 +1047,7 @@ function finish(){
 	nextAval--;
 	updateList();
 	updateProgress();
+	$('#TD3').css( 'pointer-events', '' );
 }	
 
 function updateRewardBalance(a){
@@ -1006,7 +1096,7 @@ $( "#TD3" ).mouseover(function() {
 	if(toDoList[centerIndex] != null)
 	{
 		setTimeout(function(){ 
-		if($('#TD3').is(":hover"))
+		if($('#TD3').is(":hover") || $('#T3wrapper').is(":hover"))
 		{
 			document.getElementById('TD3').click();
 		}
@@ -1014,9 +1104,32 @@ $( "#TD3" ).mouseover(function() {
 	}
 });
 
+
+
 	
 function goToReward(){
-	window.location.href = "https://www.crownawards.com/StoreFront/MDL.Medals-Dogtags.cat";
+		if(document.getElementById('container').style.display != "none")
+		{
+			$('#container').fadeOut(1000);
+			$('#tdList').fadeOut(1000);
+			$('#plus').fadeOut(1000);
+			setTimeout(function(){ $('#movement').fadeIn(3000); }, 1000);
+			removeBox();
+			var x = document.getElementById('to-do_Form');
+			if (x.style.display != 'none') {
+				x.style.display= 'none';
+			}
+			
+		}else{
+			$('#movement').fadeOut(1000);
+			setTimeout(function(){ 
+			$('#container').fadeIn(3000); 
+			$('#tdList').fadeIn(3000);
+			$('#plus').fadeIn(3000);
+			}, 1000);
+		}
+		
+		
 }
 function goToLock(){
 	window.location.href = "../../page.html";
@@ -1036,19 +1149,15 @@ function gemsNumber(){
 	}
 }
 function rewardsFunction(){
-	
-	rewardsPoints = rewardsPoints - 5;
-	document.getElementById("pointDisplay").innerHTML = "" + rewardsPoints;
-	if(rewardsPoints <= 0){
-	document.getElementById("pointDisplay").innerHTML = "0";
-	document.getElementById("error").innerHTML = "You are out of points! Complete tasks to earn more points.";
-		if(document.getElementById("error").style.display === "none"){
-			document.getElementById("error").style.display = "block";
-		}
-		else{
-			document.getElementById("error").style.display = "none";
-		}
+	if(rewardBalance >= 30){
+	updateRewardBalance(-30);
+	}else{
+		showWarning();
 	}
+}
+
+function showWarning(){
+	document.getElementById('warningBox').style.display = "inline-block";
 }
 
 function slidefeature(){
@@ -1175,54 +1284,51 @@ $(document).ready(function(){
 <div id="txt"></div>
 </div>
 </div>
+</div>
 <div id="rewards_section">
-
 <div id="error" style="display: none"></div>
-
-
-
 <div id="movement">
 <div id="nap" onclick="rewardsFunction()">
 	<img src="images/nap.png" onclick="rewardsFunction()">
 </div>
 <p class="napreward">Nap Time<br>
-5&nbsp;&nbsp;<img class="napreward" src="images/reward_icon.png" ></p>
+30&nbsp;&nbsp;<img class="napreward" src="images/reward_icon.png" ></p>
 
 <div id="social" onclick="rewardsFunction()">
 	<img src="images/social.png">
 </div>
 <p class="socialreward" style="text-align:center width:100px">Social 
 Media<br>
-	    5<img class="socialreward" src="images/reward_icon.png"></p>
+	    30<img class="socialreward" src="images/reward_icon.png"></p>
 
 <div id="coffee" onclick="rewardsFunction()">
 	<img src="images/coffee.png"></a>
 </div>
 <p class="coffeereward">Coffee Break <br>
-	    5&nbsp;&nbsp;&nbsp;<img class="coffeereward" src="images/reward_icon.png"></p>
+	    30&nbsp;&nbsp;&nbsp;<img class="coffeereward" src="images/reward_icon.png"></p>
 
 <div id="snacks" onclick="rewardsFunction()">
 	<img src="images/snacks.png">
 </div>
 <p class="snackreward">Snack Break <br>
-	    5&nbsp;&nbsp;<img class="snackreward" src="images/reward_icon.png"></p>
+	    30&nbsp;&nbsp;<img class="snackreward" src="images/reward_icon.png"></p>
 
 <div id="games" onclick="rewardsFunction()">
 	<img src="images/videogames.png">
 </div>
 <p class="gamesreward">&nbsp;&nbsp;Gaming <br>
-	    5<img class="gamesreward" src="images/reward_icon.png"></p>
+	    30<img class="gamesreward" src="images/reward_icon.png"></p>
 
 <div id="sports" onclick="rewardsFunction()">
 	<img src="images/sports.png">
 </div>
 <p class="sportreward">Outdoor Break <br>
-	    5&nbsp;&nbsp;<img class="sportreward" src="images/reward_icon.png"></p>
+	    30&nbsp;&nbsp;<img class="sportreward" src="images/reward_icon.png"></p>
 
 <div id="custom" onclick="rewardsFunction()">
 	<img src="images/trophy.png">
 </div>
 <p class="customreward">Custom <br>
-	    5<img class="customreward" src="images/reward_icon.png"></p>
+	    30<img class="customreward" src="images/reward_icon.png"></p>
 </div>
 </body>

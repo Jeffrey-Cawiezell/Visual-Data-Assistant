@@ -41,15 +41,26 @@ $('.draggable').on('mousedown', function() {
 		var x1 = x2 = $(".draggable").position().left;
 		var y1 = $(".draggable").position().top;
 		var y2 = ($(window).height() + $(".draggable").position().top);
-		$(".draggable").draggable('option', 'containment', 'window');
+		$(".draggable").draggable('option', 'containment', 'parent');
 	});
+	
+	$( "#lockPic" ).mouseover(function() {
+		$( "#arrow" ).fadeOut(500);
+	});
+	
+	$( "#lockPic" ).mouseleave(function() {	
+		setTimeout(function(){ 
+		$( "#arrow" ).fadeIn(500);
+		}, 5000);
+	});
+	
   
-  $( ".draggable" ).mouseup(function() {
+  $( "body" ).mouseup(function() {
   
   var x = document.getElementById("lock");
   var pos = x.getBoundingClientRect();
   var t = pos.right;
-  var q = window.innerWidth * (2/3);
+  var q = window.innerWidth * (3/4);
   if(t < q)
   {
   	 document.getElementById("lock").innerHTML = '<img src="unlock.png" alt="lock ring">';
@@ -63,7 +74,7 @@ $('.draggable').on('mousedown', function() {
 </script>
 </head>
 <body onload="startTime()">
-
+<p id="helper">To begin lift one hand within view of the camera and use it to drag the lock to center screen. For additional help mouse over "?"</p>
 <button class="collapsible"><img src="help.svg" alt="Help Icon" style = width:40px height:40px></button>
 <div class="content">
 	<h1>Welcome to your Visual Data Assistant!<h1>
@@ -71,7 +82,7 @@ $('.draggable').on('mousedown', function() {
     <div id="bigPicture"><IMG SRC="noun_Fist_98642.png" style= height:60px width:60px>&nbsp;&nbsp;Drag Cursor - Fist</div>
 	<div id="bigPicture"><IMG SRC="click.png" style= height:45px width:45px>&nbsp;&nbsp;&nbsp;Click - Hover</div>
     <div id="bigPicture"><IMG SRC="UI Design/wheelnav.js-1.7.1/bullet-grey.png" style= width:32px height:32px>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default Cursor - Open Hand</div>
-    <div id="bigPicture"><IMG SRC="diamond.png" style= height:50px>&nbsp;&nbsp;Reward Page</div>
+    <div id="bigPicture"><IMG SRC="diamond.png" style= height:50px>&nbsp;&nbsp;Cycle Rewards</div>
     <div id="bigPicture"><IMG SRC="plus.png" style= height:50px>&nbsp;&nbsp;Add Item</div>
     <div id="bigPicture"><IMG SRC="lock.png" style= height:50px>&nbsp;&nbsp;Lock Screen</div>
     
@@ -106,9 +117,13 @@ for (i = 0; i < coll.length; i++) {
 </div>
 
 	<img src="giphy.gif" alt="arrow" id="arrow">
-	<div class ="draggable" draggable="true" id = "lock">
 	
+	<div id="dragWrapper">
+	<div class ="draggable" draggable="true" id = "lock">
 	<img src="lock.png" alt="lock ring" id="lockPic">
 	</div>
+	</div>
+	
+	
 </body>
 </html>

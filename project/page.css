@@ -1,6 +1,10 @@
 body{
 	background: rgb(0,0,0);
     overflow: hidden;
+	height: 1080px;
+	width: 1920px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
 }
 
 h1{
@@ -252,6 +256,14 @@ p{
 	
 }
 
+#helper{
+	bottom:0px;
+	left:125px;
+	font-size:20px;
+	position: absolute;
+	color: white;
+}
+
 .outerTime{
 	text-align: center;
 }
@@ -260,13 +272,14 @@ p{
 .draggable {
 	cursor: grabbing;
     position: absolute;
-    top: 35%;
+    top: 23%;
     background: rgb(0,0,0);
     height: 50%;
     width: 25%;
     right: 0px;
     text-align: center;
     margin: 0px;
+	right: 15px;
 	
 }
 
@@ -310,4 +323,11 @@ padding: 10px;
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+
+#dragWrapper{
+	width: 55%;
+	right: 0px;
+	height: 100%;
+	position: absolute;
 }
