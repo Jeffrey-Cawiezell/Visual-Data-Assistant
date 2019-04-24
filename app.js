@@ -12,7 +12,7 @@ app.use(express.static('project'));
 
 // Home Route
 app.get('*', (req, res) => {
-res.sendFile(path.join(__dirname + '/project/page.html'))
+res.sendFile(path.join(__dirname + '/project/UI Design/wheelnav.js-1.7.1/integratedwheel.html'))
 });
 
 // Add Route
