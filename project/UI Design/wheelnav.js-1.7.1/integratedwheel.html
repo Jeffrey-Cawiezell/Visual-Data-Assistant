@@ -1169,6 +1169,50 @@ function slidefeature(){
 		}
 	}
 
+// var hov = 2000;
+
+$( "#rewardButton" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#rewardButton').is(":hover"))
+		{
+			document.getElementById('rewardButton').click();
+		}
+		}, hov);
+	}
+});
+$( "#lockButton" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#lockButton').is(":hover"))
+		{
+			document.getElementById('lockButton').click();
+		}
+		}, hov);
+	}
+});
+$( ".weatherwidget-io" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('.weatherwidget-io').is(":hover"))
+		{
+			document.getElementById('weatherwidget-io').click();
+		}
+		}, hov);
+	}
+});
+
+$( "#plus" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#plus').is(":hover"))
+		{
+			document.getElementById('plus').click();
+		}
+		}, hov);
+	}
+});
+
 </script>
 
 <script>
