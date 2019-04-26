@@ -5,6 +5,7 @@ body{
 	width: 1920px;
 	font-family: 'Roboto', sans-serif;
 	color: white;
+	cursor: url('UI Design/wheelnav.js-1.7.1/bullet-grey.png') 16 16, auto;
 }
 
 
@@ -50,8 +51,7 @@ body{
 
 .collapsible {
   background-color: #777;
-  cursor: grabbing;
-  /*cursor: url('cursor.cur'), auto; */
+  cursor: url('bullet-grey.png'), auto; 
   padding: 5px;
   width: 5%;
   position: absolute;

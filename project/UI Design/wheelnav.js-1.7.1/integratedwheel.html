@@ -24,6 +24,10 @@
 			
         }
 		
+		input{
+			cursor: pointer;
+		}
+		
 		.Main{
 		display: none;
 		z-index: 0;
@@ -44,11 +48,7 @@
 		left: 50px;
 		}
 		
-		#rewards_section{
-			
-			
-			
-		}
+		
 		
 		
 		
@@ -76,6 +76,7 @@
 		z-index: 3;
 		height: 10%;
 		}
+		
 		
 		.verifyBox input{
 			background-color: black;
@@ -241,8 +242,8 @@
 		border-width: 0 3px 3px 0;
 		display: inline-block;
 		padding: 3px;
-		width: 10px;
-		height: 10px;
+		width: 20px;
+		height: 20px;
 		}
 		
 		.up {
@@ -310,7 +311,7 @@
 				color: white;
 				height: 50%;
 				width: 50%;
-				right: 250px;
+				right: 380px;
 				position: absolute;
 
 			}
@@ -323,6 +324,7 @@
 			}
 			#to-do_Item input#micInput{
 				right: 35%;
+				width:275px;
 				position: absolute;
 			}
 			#to-do_Item input#due_date{
@@ -341,28 +343,28 @@
 				color: white;
 				height: 50%;
 				width: 50%;
-				right: 110px;
+				right: 269px;
 				position: absolute;
 			}
 			#to-do_Item label[for=quote3]{
 				color: white;
 				height: 50%;
 				width: 50%;
-				right: 25px;
+				right: 99px;
 				position: absolute;
 			}
 			#to-do_Item label[for=quote4]{
 				color: white;
 				height: 50%;
 				width: 50%;
-				right: -50px;
+				right: 7px;
 				position: absolute;
 			}
 			#to-do_Item label[for=quote5]{
 				color: white;
 				height: 50%;
-				width: 50%;
-				right: -100px;
+				width: 110px;
+				right: -160px;
 				position: absolute;
 			}
 			span#quote_error{
@@ -392,49 +394,24 @@
 				color: white;
 				height: 50%;
 				width: 50%;
-				right: 160px;
+				right: 240px;
 				position: absolute;
 			}
 			#to-do_Item label[for=gems10]{
 				color: white;
 				height: 50%;
 				width: 50%;
-				right: 100px;
+				right: 147px;
 				position: absolute;
 			}
 			#to-do_Item label[for=gems15]{
 				color: white;
 				height: 50%;
 				width: 50%;
-				right: 25px;
+				right: 53px;
 				position: absolute;
 			}
-/*			
-			input#gems10{
-				position: absolute;
-				right: -125px;
-			}
-			input#gems15{
-				position: absolute;
-				right: -200px;
-			}
-			#quote2{
-				position: absolute;
-				right: -50px;
-			}
-			#quote3{
-				position: absolute;
-				right: -75px;
-			}
-			#quote4{
-				position: absolute;
-				right: -100px;
-			}
-			#quote5{
-				position: absolute;
-				right: -125px;
-				
-			}*/
+
 			#to-do_Item{
 				z-index: 3;
 				border: solid;
@@ -449,6 +426,7 @@
 			
 			
 			#rewardButton{
+			z-index: 10;
 			cursor: pointer;
 				right: 100px;
 				top: 2px;
@@ -456,6 +434,7 @@
 				
 			}
 			#lockButton{
+			z-index: 10;
 			cursor:pointer;
 			right:66px;
 			top:9px;
@@ -468,6 +447,7 @@
 			}
 			
 			#plus{
+			z-index: 10;
 			top: 10px;
 			cursor: pointer;
 			border-radius: 50%;
@@ -490,7 +470,7 @@
 			}
 			#quote_format{
 				position: absolute;
-				top: 55%;
+				top: 50%;
 				right: 35%;
 			}
 			#gems_format{
@@ -502,149 +482,123 @@
 			#submission_format{
 				position: absolute;
 				top: 85%;
-				left: 17%;
+				left: 30%;
 			}
-			#nap img { margin-left: 1016px;
-	       margin-top: 50px;
-	       margin-bottom: -88px;
-	       height: 175px;
-	       background: none;
-	       position: relative; }
-.napreward  {  color: white;
-		 	   margin-left: 1082px;
-		 	   margin-top: 12px;
-		 	   margin-bottom: 0px;
-		 	   position: absolute;
-		 	   background: none; }
-.napreward img { color: white;
-			 	 height: 35px;
-			 	 margin-left: 24px;
-			 	 margin-top: -11px;
-			 	 position: absolute; }
-#coffee img { margin-left: 862px;
-			  margin-bottom: -92px;
-	      	  height: 175px;
-	      	  background: none;
-	      	  position: relative; }
-.coffeereward  { color: white;
-		 	   	 margin-left: 921px;
-		 	   	 margin-top: 12px;
-		 	   	 margin-bottom: 0px;
-		 	   	 position: absolute;
-		 	   	 background: none; }
-.coffeereward img { color: white;
-			 	 	height: 35px;
-			 	 	margin-left: 37px;
-			 	 	margin-top: -11px;
-			 	 	position: absolute; }
-#snacks img { margin-left: 1017px;
-			  margin-bottom: -145px;
-			  height: 175px;
-			  background: none;
-			  position: relative; }
-.snackreward  { color: white;
-		 	   	margin-left: 1078px;
-		 	   	margin-top: 71px;
-		 	   	margin-bottom: 0px;
-		 	   	position: absolute;
-		 	   	background: none; }
-.snackreward img { color: white;
-			 	   height: 35px;
-			 	   margin-left: 37px;
-			 	   margin-top: -11px;
-			 	   position: absolute; }
-#games img { margin-left: 1170px;
-			 margin-top: -124px;
-			 height: 175px;
-			 background: none;
-			 position: relative;
+			#submission{
+			    background-color: black;
+				color: white;
+				border: 1px solid #50A9FA;
+				padding-left: 50px;
+				padding-right: 50px;
+				padding-bottom: 4px;
+				padding-top: 5px;
+				margin-left: 281px;
+				margin-top: 6px;
+				margin-right: 19px;
+				left: 57%;
+				position: absolute;
+			}
 			
+			#rewards_section{
+			color: white;
+			top: 0px;
+			position: absolute;
+			right:0px;
+			height: 100%;
+			width:80%;
+			display: none;
 			}
-.gamesreward  { color: white;
-		 	    margin-left: 1231px;
-		 	    margin-top: -82px;
-		 	    margin-bottom: 0px;
-		 	    position: absolute;
-		 	    background: none; }
-.gamesreward img { color: white;
-			 	   height: 35px;
-			 	   margin-left: 40px;
-			 	   margin-top: -11px;
-			 	   position: absolute; }
-#sports img { margin-left: 863px;
-			  margin-top: 2px;
-			  height: 175px;
-			  background: none;
-			  position: relative; }
-.sportreward  { color: white;
-		 	    margin-left: 921px;
-		 	    margin-top: -70px;
-		 	    margin-bottom: 0px;
-		 	    position: absolute;
-		 	    background: none; }
-.sportreward img { color: white;
-			 	   height: 35px;
-			 	   margin-left: 47px;
-			 	   margin-top: -11px;
-			 	   position: absolute; }
-#social img { margin-left: 1170px;
-			  margin-top: 176px;
-			  height: 175px;
-			  background: none;
-			  position: absolute; }
-.socialreward  { color: white;
-		 	     margin-left: 1231px;
-		 	     margin-top: 267px;
-		 	     margin-bottom: 0px;
-		 	     position: absolute;
-		 	     background: none;
-				}
-.socialreward img { color: white;
-			 	    height: 35px;
-			 	 	margin-left: 47px;
-			 	 	margin-top: -11px;
-			 	 	position: absolute; }
-#custom img { margin-left: 1023px;
-			  margin-top: -93px;
-			  height: 175px;
-			  background: none;
-			  position: absolute; }
-.customreward  { color: white;
-		 	     margin-left: 1095px;
-		 	     margin-top: 7px;
-		 	     margin-bottom: 0px;
-		 	     position: absolute;
-		 	     background: none; }
-.customreward img { color: white;
-			 	    height: 35px;
-			 	 	margin-left: 21px;
-			 	 	margin-top: -11px;
-			 	 	position: absolute; }
-
-
-
-#mainDiamond{
-	height: 100px;
-	width: 100px;
+			
+			.diamondimg{ height: 25%;
+			position: absolute;
+			bottom: 0px;
+			right: 99px;
+			}
+			
+			.rewardlabel{
+			position: relative;
+			top: 60%;
+			right: 6%;
+			width: max-content;
+			font-size: 25px;}
+			
+			.gemval{
+			position:absolute;
+			bottom: 17px;
+			right: 161px;
+			font-size: 30px;}
+			
+.heximg{ 
+	top: 0px;
+	right:0px;
+	height: 100%;
 	position: absolute;
-	left: 100px;
-	top: 100px;
-}
-p#pointDisplay{
-	color: white;
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	left: 200px;
-	top: 150px;
-}
-#movement{
-	position: absolute;
-	right: 25%;
-	top: 21%;
-	width:max-content;
-	display: none;
-}
+	}
+	
+				
+#social { height: 275px;
+			width: 275px;
+			top: 420px;
+			left: 750px;
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			}
+						
+#nap { height: 275px;
+			width: 275px;
+			top: 145px;
+			left: 750px;
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			}
+						
+#coffee {  height: 275px;
+			width: 275px;
+			top: 557px;
+			left: 512px;
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			}
+						
+#snacks {  height: 275px;
+			width: 275px;
+			top: 282px;
+			left: 512px;
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			}
+						
+#games { height: 275px;
+			width: 275px;
+			top: 282px;
+			left: 988px;
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			}
+						
+#sports {  height: 275px;
+			width: 275px;
+			top: 557px;
+			left: 988px;
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			}
+						
+#custom { height: 275px;
+			width: 275px;
+			top: 691px;
+			left: 742px;
+			position: absolute;
+			text-align: center;
+			cursor: pointer;
+			}
+
 #error{
 	color: white;
 	border: solid;
@@ -720,11 +674,11 @@ p#pointDisplay{
 		
 		<div id="quote_format">
           <label for="quote">Quote Category</label>
-			<label for="quote1"><input type="radio" id="quote1" name="quote" value="1" required checked>Spiritual</label>
-        	<label for="quote2"><input type="radio" id="quote2" name="quote" value="5" required>Motivation</label>
-			<label for="quote3"><input type="radio" id="quote3" name="quote" value="2" required>Education</label>
-			<label for="quote4"><input type="radio" id="quote4" name="quote" value="3" required>Health</label>
-			<label for="quote5"><input type="radio" id="quote5" name="quote" value="4" required>Stress Relief</label>
+			<label for="quote1"><input type="radio" id="quote1" name="quote" value="1" required checked><br>Spiritual</label>
+        	<label for="quote2"><input type="radio" id="quote2" name="quote" value="5" required><br>Motivation</label>
+			<label for="quote3"><input type="radio" id="quote3" name="quote" value="2" required><br>Education</label>
+			<label for="quote4"><input type="radio" id="quote4" name="quote" value="3" required><br>Health</label>
+			<label for="quote5"><input type="radio" id="quote5" name="quote" value="4" required><br>Stress Relief</label>
            <span></span>
 		  <br />
 		</div>
@@ -737,7 +691,7 @@ p#pointDisplay{
           <br />
 		</div>
 		  
-		<div id="submission_format">
+		<div id="submission_format" >
           <label>&nbsp;</label>
           <input type="button" id="submission" value="Submit" onclick="submitToDo()"><br>
 		</div>
@@ -793,7 +747,14 @@ recognition.onspeechend = function() {
 	<div class="boxWrapper">
 	<div id="warningBox" class="verifyBox">
 		<p>You do not have enough reward points. Continue completing tasks to earn more!</p>
-		<input type="button" value="Continue" onclick="removeWarningBox()">
+		<input type="button" id="continue" value="Continue" onclick="removeWarningBox()">
+	</div>
+	</div>
+	<div class="boxWrapper">
+	<div id="rewardBox" class="verifyBox">
+		<p>Would you like to redeem this item and spend <span></span> some of your points?</p>
+		<input type="button" id="RYes" value="Yes" onclick="rewardYes()">
+		<input type="button" id="RNo" value="No" onclick="rewardNo()">
 	</div>
 	</div>
 	<img src="reward_icon.png" id="rewardButton" width="40" height="40" onclick="goToReward();"/>
@@ -802,10 +763,10 @@ recognition.onspeechend = function() {
 	<ul id="tdList">
 	<li id="TD1">Add items to your list</li>
 	<li id="TD2">Add items to your list</li>
-	<i class="up" onclick="cycleUp();"></i>
+	<i id="up" class="up" onclick="cycleUp();"></i>
 	<label><li id="TD3"><span id="T3wrapper">Add items to your list</span><input id="selectorBox" type="checkbox" name="select" onclick="verify()">
 	<span class="checkmark"></span></li></label>
-	<i class="down" onclick="cycleDown();"></i>
+	<i id="down" class="down" onclick="cycleDown();"></i>
 	<li id="TD4">Add items to your list</li>
 	<li id="TD5">Add items to your list</li>
 	</ul>
@@ -833,59 +794,70 @@ recognition.onspeechend = function() {
 <script>
 var toDoList = [];
 var nextAval = 0;
-var first = 0;
-var last = 0;
-var toDoHTML = [];
 var centerIndex = 0;
 var totalItems = 0;
 var completedItems = 0;
 var rewardBalance = 0;
+if(localStorage.getItem("toDoList") === null)
+{
+toDoList = [];
+}else{
+toDoList = JSON.parse(localStorage.getItem("toDoList"));
+}
+
+if(localStorage.getItem("nextAval") === null)
+{
+nextAval = 0;
+}else{
+nextAval = parseInt(localStorage.getItem("nextAval"));
+}
+
+if(localStorage.getItem("centerIndex") === null)
+{
+centerIndex = 0;
+}else{
+centerIndex = parseInt(localStorage.getItem("centerIndex"));
+}
+
+if(localStorage.getItem("totalItems") === null)
+{
+totalItems = 0;
+}else{
+totalItems = parseInt(localStorage.getItem("totalItems"));
+}
+
+if(localStorage.getItem("completedItems") === null)
+{
+completedItems = 0;
+}else{
+completedItems = parseInt(localStorage.getItem("completedItems"));
+}
+
+if(localStorage.getItem("rewardBalance") === null)
+{
+rewardBalance = 0;
+}else{
+rewardBalance = parseInt(localStorage.getItem("rewardBalance"));
+}
+
+var toDoHTML = [];
+
 var hov = 2000;
 toDoHTML[0] = document.getElementById("T3wrapper");
 toDoHTML[1] = document.getElementById("TD4");
 toDoHTML[2] = document.getElementById("TD5");
 toDoHTML[3] = document.getElementById("TD1");
 toDoHTML[4] = document.getElementById("TD2");
-/*
-	$('#submission').click(function(evt){
-		var toDo = {
-			name: "Jeff",
-			dateDay: 0,
-			dateMonth: 0,
-			dateYear: 0,
-			gemVal: 0,
-			quoteCat: 0,
-			
-		}
 
-		toDo.name = $('#micInput').val();
-		toDo.dateDay = $('#name').val();
-		toDo.dateMonth = $('#name').val();
-		toDo.dateYear = $('#name').val();
-		toDo.gemVal = $("input[name='gem']:checked").val();
-		toDo.quoteCat = $("input[name='quote']:checked").val();
-		toDoList[nextAval] = toDo;
-		var isValid = true;
-		
-		if(toDo.gemVal === ""){
-			isValid = false;
-			$('#micInput').next().next().text("This Field is Required");
-			
-		}
-		if(toDo.quoteCat === ""){
-			isValid = false;
-			$('#micInput').next().next().text("This Field is Required");
-			
-		}
-		if(isValid){
-			$('#to-do_Item').submit();
-			document.getElementById("to-do_Form").style.display = "none";
-		}
-		else{
-			evt.preventDefault();
-		}
-	});
-	*/
+	function save(){
+		localStorage.setItem("toDoList", JSON.stringify(toDoList));
+		localStorage.setItem("nextAval", nextAval);
+		localStorage.setItem("centerIndex", centerIndex);
+		localStorage.setItem("totalItems", totalItems);
+		localStorage.setItem("completedItems", completedItems);
+		localStorage.setItem("rewardBalance", rewardBalance);
+	}
+
 	function submitToDo(evt)
 	{
 		var toDo = {
@@ -911,6 +883,7 @@ toDoHTML[4] = document.getElementById("TD2");
 		var x = document.getElementById('to-do_Form');
 		x.style.display = 'none';
 		toDoList[nextAval] = toDo;
+		
 		totalItems++;
 		
 		centerIndex = nextAval;
@@ -922,6 +895,7 @@ toDoHTML[4] = document.getElementById("TD2");
 	
 	function updateProgress(){
 	var i = completedItems/totalItems;
+	
 	bar.animate(.5 + i/2);
 	if(i == 1)
 	{
@@ -951,6 +925,11 @@ function cycleDown(){
 	
 	function updateList(){
 
+		for(var i = 0; i < 5;i++)
+		{
+			toDoHTML[i].style.display= "none";
+		}
+		
 		if(nextAval > 0){
 			toDoHTML[0].innerHTML = "" + toDoList[centerIndex].name;
 			updateQuote(toDoList[centerIndex].quoteCat);
@@ -1019,6 +998,12 @@ function cycleDown(){
 			toDoHTML[4].innerHTML = "Add items to your list";
 		}
 		
+		$('#TD1').fadeIn(1000);
+		$('#TD2').fadeIn(1000);
+		$('#T3wrapper').fadeIn(1000);
+		$('#TD4').fadeIn(1000);
+		$('#TD5').fadeIn(1000);
+		
 	}
 	
 function verify(){
@@ -1057,6 +1042,7 @@ function finish(){
 }	
 
 function updateRewardBalance(a){
+	a = typeof a !== 'undefined' ? a : 0;
 	var rwb = document.getElementById('rewardBalance');
 	var amount = parseInt(a);
 	var newBal = amount + rewardBalance;
@@ -1072,7 +1058,7 @@ function updateRewardBalance(a){
 			}
 		}, 100);
 		
-	}else{
+	}else if(a<0){
 		var animateReward = setInterval(function(){
 			rwb.style.color = "red";
 			rewardBalance--;
@@ -1083,6 +1069,7 @@ function updateRewardBalance(a){
 			}
 		}, 100);
 	}
+	rwb.innerHTML = rewardBalance;
 	document.getElementById("selectorBox").checked = false;
 	
 	
@@ -1116,7 +1103,7 @@ function goToReward(){
 			$('#container').fadeOut(1000);
 			$('#tdList').fadeOut(1000);
 			$('#plus').fadeOut(1000);
-			setTimeout(function(){ $('#movement').fadeIn(3000); }, 1000);
+			setTimeout(function(){ $('#rewards_section').fadeIn(3000); }, 1000);
 			removeBox();
 			var x = document.getElementById('to-do_Form');
 			if (x.style.display != 'none') {
@@ -1124,7 +1111,7 @@ function goToReward(){
 			}
 			
 		}else{
-			$('#movement').fadeOut(1000);
+			$('#rewards_section').fadeOut(1000);
 			setTimeout(function(){ 
 			$('#container').fadeIn(3000); 
 			$('#tdList').fadeIn(3000);
@@ -1135,8 +1122,8 @@ function goToReward(){
 		
 }
 function goToLock(){
-
-	
+	save();
+	window.location.href = "../../page.html";
 }
 
 function gemsNumber(){
@@ -1153,6 +1140,16 @@ function gemsNumber(){
 	}
 }
 function rewardsFunction(){
+	document.getElementById('rewardBox').style.display = "inline-block";
+	
+}
+
+function rewardNo(){
+	document.getElementById('rewardBox').style.display="none";
+}
+
+function rewardYes(){
+	document.getElementById('rewardBox').style.display="none";
 	if(rewardBalance >= 30){
 	updateRewardBalance(-30);
 	}else{
@@ -1238,7 +1235,126 @@ $( "#No" ).mouseover(function() {
 		}, hov);
 	}
 });
-
+$( "#RNo" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#RNo').is(":hover"))
+		{
+			document.getElementById('RNo').click();
+		}
+		}, hov);
+	}
+});
+$( "#RYes" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#RYes').is(":hover"))
+		{
+			document.getElementById('RYes').click();
+		}
+		}, hov);
+	}
+});
+$( "#micPNG" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#micPNG').is(":hover"))
+		{
+			document.getElementById('micPNG').click();
+		}
+		}, hov);
+	}
+});
+$( "#quote1" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#quote1').is(":hover"))
+		{
+			document.getElementById('quote1').click();
+		}
+		}, hov);
+	}
+});
+$( "#quote2" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#quote2').is(":hover"))
+		{
+			document.getElementById('quote2').click();
+		}
+		}, hov);
+	}
+});
+$( "#quote3" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#quote3').is(":hover"))
+		{
+			document.getElementById('quote3').click();
+		}
+		}, hov);
+	}
+});
+$( "#quote4" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#quote4').is(":hover"))
+		{
+			document.getElementById('quote4').click();
+		}
+		}, hov);
+	}
+});
+$( "#quote5" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#quote5').is(":hover"))
+		{
+			document.getElementById('quote5').click();
+		}
+		}, hov);
+	}
+});
+$( "#gems5" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#gems5').is(":hover"))
+		{
+			document.getElementById('#gems5').click();
+		}
+		}, hov);
+	}
+});
+$( "#gems10" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#gems10').is(":hover"))
+		{
+			document.getElementById('gems10').click();
+		}
+		}, hov);
+	}
+});
+$( "#gems15" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#gems15').is(":hover"))
+		{
+			document.getElementById('gems15').click();
+		}
+		}, hov);
+	}
+});
+$( "#continue" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#continue').is(":hover"))
+		{
+			document.getElementById('continue').click();
+		}
+		}, hov);
+	}
+});
 </script>
 
 <script>
@@ -1263,7 +1379,9 @@ $( "#No" ).mouseover(function() {
 <div id="quotes">
 <script>
 function updateQuote(cat){
+document.getElementById('quotes').style.display = "none";
 	var selectedQuote = "";
+	cat = typeof cat !== 'undefined' ? cat : 5;
 	if(cat == 1)
 	{
 		var bible = ["\"The Lord is my strength and my song, and he has become my salvation; this is my God, and I will praise him, my fathers God, and I will exalt him.\" - Exodus 15:2", 
@@ -1339,14 +1457,23 @@ function updateQuote(cat){
 		
 	}
 	document.getElementById('quotes').innerHTML = "" + selectedQuote;
-
+	$('#quotes').fadeIn(500);
 }
 $(document).ready(function(){
 		$('.Main').fadeIn(3000);
 		});
 		
-		setTimeout(function(){ bar.animate(.50); }, 1000);
-		updateQuote(5);
+		setTimeout(function(){ bar.animate(.50); }, 0);
+		updateQuote();
+		updateList();
+		//updateProgress();
+		updateRewardBalance();
+		var x = parseInt(localStorage.getItem('completedItems'));
+		var y = parseInt(localStorage.getItem('totalItems'));
+		if(y > 0){
+		var z = x/y;
+		setTimeout(function(){ bar.animate(.50 + z/2); }, 1000);
+		}
 
 </script>
 </div>
@@ -1356,50 +1483,136 @@ $(document).ready(function(){
 </div>
 </div>
 <div id="rewards_section">
-<div id="error" style="display: none"></div>
-<div id="movement">
-<div id="nap" onclick="rewardsFunction()">
-	<img src="images/nap.png" onclick="rewardsFunction()">
-</div>
-<p class="napreward">Nap Time<br>
-30&nbsp;&nbsp;<img class="napreward" src="images/reward_icon.png" ></p>
-
+		
 <div id="social" onclick="rewardsFunction()">
-	<img src="images/social.png">
+<img src="images/social.png" class="heximg">
+<span class="rewardlabel">Social 
+Media</span><span class="gemval">30</span><img class="diamondimg" src="images/reward_icon.png">
 </div>
-<p class="socialreward" style="text-align:center width:100px">Social 
-Media<br>
-	    30<img class="socialreward" src="images/reward_icon.png"></p>
+
+<div id="nap" onclick="rewardsFunction()">
+<img src="images/nap.png" class="heximg">
+<span class="rewardlabel">Nap Time
+</span><span class="gemval">30</span><img class="diamondimg" src="images/reward_icon.png">
+</div>
 
 <div id="coffee" onclick="rewardsFunction()">
-	<img src="images/coffee.png"></a>
+<img src="images/coffee.png" class="heximg">
+<span class="rewardlabel">Coffee Break</span><span class="gemval">30</span><img class="diamondimg" src="images/reward_icon.png">
 </div>
-<p class="coffeereward">Coffee Break <br>
-	    30&nbsp;&nbsp;&nbsp;<img class="coffeereward" src="images/reward_icon.png"></p>
 
 <div id="snacks" onclick="rewardsFunction()">
-	<img src="images/snacks.png">
+<img src="images/snacks.png" class="heximg">
+<span class="rewardlabel">Snack Break</span><span class="gemval">30</span><img class="diamondimg" src="images/reward_icon.png">
 </div>
-<p class="snackreward">Snack Break <br>
-	    30&nbsp;&nbsp;<img class="snackreward" src="images/reward_icon.png"></p>
 
 <div id="games" onclick="rewardsFunction()">
-	<img src="images/videogames.png">
+<img src="images/videogames.png" class="heximg">
+<span class="rewardlabel">Gaming</span><span class="gemval">30</span><img class="diamondimg" src="images/reward_icon.png">
 </div>
-<p class="gamesreward">&nbsp;&nbsp;Gaming <br>
-	    30<img class="gamesreward" src="images/reward_icon.png"></p>
 
 <div id="sports" onclick="rewardsFunction()">
-	<img src="images/sports.png">
+<img src="images/sports.png" class="heximg">
+<span class="rewardlabel">Outdoor Break</span><span class="gemval">30</span><img class="diamondimg" src="images/reward_icon.png">
 </div>
-<p class="sportreward">Outdoor Break <br>
-	    30&nbsp;&nbsp;<img class="sportreward" src="images/reward_icon.png"></p>
 
 <div id="custom" onclick="rewardsFunction()">
-	<img src="images/trophy.png">
+<img src="images/trophy.png" class="heximg">
+<span class="rewardlabel">Custom</span><span class="gemval">30</span><img class="diamondimg" src="images/reward_icon.png">
 </div>
-<p class="customreward">Custom <br>
-	    30<img class="customreward" src="images/reward_icon.png"></p>
+
+<script>
+$( "#social" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#social').is(":hover"))
+		{
+			document.getElementById('social').click();
+		}
+		}, hov);
+	}
+});
+$( "#coffee" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#coffee').is(":hover"))
+		{
+			document.getElementById('coffee').click();
+		}
+		}, hov);
+	}
+});
+$( "#snacks" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#snacks').is(":hover"))
+		{
+			document.getElementById('snacks').click();
+		}
+		}, hov);
+	}
+});
+$( "#games" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#games').is(":hover"))
+		{
+			document.getElementById('games').click();
+		}
+		}, hov);
+	}
+});
+$( "#sports" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#sports').is(":hover"))
+		{
+			document.getElementById('sports').click();
+		}
+		}, hov);
+	}
+});
+$( "#custom" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#custom').is(":hover"))
+		{
+			document.getElementById('custom').click();
+		}
+		}, hov);
+	}
+});
+$( "#nap" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#nap').is(":hover"))
+		{
+			document.getElementById('nap').click();
+		}
+		}, hov);
+	}
+});
+$( "#up" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#up').is(":hover"))
+		{
+			document.getElementById('up').click();
+		}
+		}, hov);
+	}
+});
+$( "#down" ).mouseover(function() {
+	{
+		setTimeout(function(){ 
+		if($('#down').is(":hover"))
+		{
+			document.getElementById('down').click();
+		}
+		}, hov);
+	}
+});
+</script>
 </div>
 
 </body>
